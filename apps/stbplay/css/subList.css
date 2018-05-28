@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+* {padding:0;margin:0;font-family:"Microsoft YaHei" !important;}
+body {margin:0;padding:0;color:#FFF;border:0px; width:1280px; height:720px;background:url(../images/stb_bg.jpg) no-repeat; font-size:24px;}
+img {border:0;}
+.setting_logo{position:absolute; top:25px; left:90px; height:35px; width:153px; background:url(../images/stb_logo.png) no-repeat;}
+#logo_text{ position:absolute; top:25px; left:130px; width:500px; height:60px; font-size:36px;  font-weight:bold;}
+.back_area{ position:absolute; top:25px; left:1050px; height:60px; width:200px; font-weight:bold;}
+.back_logo{ position:absolute; top:0px; left:0px; height:31px; width:33px; background:url(../images/stb_back.png) no-repeat;}
+#back_text{  position:absolute; top:0px; left:45px; width:150px; height:30px; font-size:26px;}
+
+#menu_area{position:absolute; left:60px; top:120px; height:auto; width:200px; z-index:2;}
+#menu_video,#menu_audio,#menu_other{position:relative; width:160px; height:120px; text-align:right; font-size:27px; letter-spacing:1px; vertical-align:middle; line-height:120px; padding-left:30px;}
+#menu_area .focus{font-size:27px; color:#30FF00;}
+#video_pic{ position:absolute; left:0px; top:20px; background:url(../images/stb_video_focus1.png) no-repeat; width:92px; height:80px;}
+#audio_pic{ position:absolute; left:0px; top:140px; background:url(../images/stb_audio_focus.png) no-repeat; width:92px; height:80px;}
+#other_pic{ position:absolute; left:0px; top:260px; background:url(../images/stb_other_focus.png) no-repeat; width:92px; height:80px;}
+
+.program{ position:absolute; left:423px; top:122px; width:525px; height:520px; text-align:left; }
+#program_list{ padding-top:5px; padding-bottom:38px; padding-left:0px; z-index:10;}
+.pro_list{line-height:63px; height:67px; margin-top:-2px; padding-left:0px;}
+#focus{ position:absolute; left:400px; top:125px; width:566px; height:58px; background:url(../images/stb_righ_focus.png) no-repeat; z-index:-1; visibility:hidden; }
+#play{ position:absolute; left:910px; top:140px; width:31px; height:31px; background:url(../images/stb_play.png) no-repeat; visibility:hidden;}
+
+.page_area{ position:absolute; left:560px; top:620px; width:500px; height:50px;}
+#page_up{ position:absolute; left:0px; top:0px; width:100px; height:50px; visibility:hidden;}
+#page_down{ position:absolute; left:260px; top:0px; width:100px; height:50px; visibility:hidden;}
+#page_total{ position:absolute; left:130px; top:0px; width:100px; height:50px;}
+#page_focus{ position:absolute; left:555px; top:615px; width:60px; height:35px; background:url(../images/stb_page_focus.png) no-repeat; visibility:hidden;}
+
+#tip_area{ position:absolute; left:400px; top:250px;/* background:url(../images/stb_tip.png) no-repeat;*/ width:426px; height:234px; visibility:visible}
+#tip_text{ position:absolute; left:30px; top:100px; width:360px; height:50px; text-align:center; font-size:26px;}

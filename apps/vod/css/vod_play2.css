@@ -1,0 +1,411 @@
+*{
+	padding:0px;
+	margin:0px;	
+	color:#FFF;	
+}
+body {
+    color:#FFF;
+    font-family: '微软雅黑';
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+	
+}
+ul, li {
+    list-style: none outside none;
+}
+#playpanel {
+    background: url("../images/play_icons.png") repeat scroll 0px 161px transparent;
+    height: 156px;
+    left:120px;
+    opacity: 1;
+    position: absolute;
+    top: 512px;
+    width:1045px;
+    z-index: 2;
+}
+#playlist {
+    background: url("../images/play_icons.png") repeat scroll 0px 321px transparent;
+    height: 106px;
+    left:120px;
+    opacity: 1;
+    position: absolute;
+    top:512px;
+    width:1045px;
+    z-index: 2;
+	
+}
+
+#itemList {
+    left: 0;
+    position: absolute;
+    top: 1px;
+}
+#itemList ul{
+    list-style:none;
+	padding:0px;
+	margin:0px;
+}
+#itemList li {
+	list-style:none;
+    border-right: 1px solid #383838;
+    float: left;
+    font-size: 24px;
+    line-height: 52px;
+    text-align: center;
+    width: 103px;
+	color:#f0f0f0;
+}
+#itemList li.o{
+background: url("../images/select_bg.png") repeat-x;
+}
+#itemArea {
+    left:0px;
+    position: absolute;
+    top: 100px;
+}
+#itemArea li {
+    float: left;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    width: 105px;
+	color:#eee;
+}
+#itemArea li.o{
+    color:#01dcff;
+}
+
+
+
+#select_panel {
+	font-family:"Microsoft YaHei" !important;
+    left:1000px;
+    position: absolute;
+    bottom:210px;
+    width:138px;
+	height:auto;
+	z-index:99999;	
+}
+.sel_top{
+	background:url(../images/sel_top.png) no-repeat transparent;
+    width: 138px;	
+	height:12px;
+}
+.sel_mid{
+	background:url(../images/sel_mid.png) repeat-y transparent;
+    width: 138px;	
+	height:1%;
+	overflow:hidden;
+}
+.sel_bom{
+	background:url(../images/sel_bom.png) repeat-y transparent;
+    width: 138px;	
+	height:12px;
+}
+.sel_mid ul{
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+.sel_mid ul li{
+	text-align:center;
+	font-size:28px;
+	color:#f0f0f0;
+	line-height:30px;
+	height:30px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.sel_mid ul li.o{
+	text-align:center;
+	font-size:29px;
+	color:#f0f903;
+	line-height:28px;
+	height:30px;
+	padding-top:10px;
+	padding-bottom:10px;
+	background:url(../images/sel_line.png) no-repeat center center transparent;
+}
+
+
+
+
+
+
+
+
+
+#itemFocus {
+    background: url("../images/list_focus.gif") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    height: 60px;
+    left: 0;
+    position: absolute;
+    top: 97px;
+    width: 127px;
+}
+
+#jumpdiv {
+	height: 70px;
+	left: 135px;
+	position: absolute;
+	top: -64px;
+	width:120px;
+	z-index: 3;
+	text-align:center;
+	/*background:url("../images/play_icons.png") no-repeat scroll -375px -14px transparent*/
+}
+#jumptime {
+    color: #000;
+    font-size: 25px;
+    line-height: 25px;
+	height:25px;
+	overflow:hidden;
+    position: absolute;
+    left: 3px;
+    top:8px;
+    width: 100%;
+    z-index: 4;
+}
+#jumptime input{
+	border:0px;
+	padding:0px;
+	padding-top:5px;
+	margin:0px;
+	height:20px;
+	width:20px;
+}
+
+#jumptime span{
+	font-size:15px;
+	width:3px;
+	height:8px;
+	padding:0px;
+	position:absolute;
+	top:3px;
+	left:21px;
+}
+#jumptime .span2{
+	left:47px;
+}
+#dot{
+	height:38px;
+	left:42px;
+	position: absolute;
+	top:76px;
+	width:36px;
+}
+.dot_off {
+    background: url("../images/play_icons.png") repeat scroll -214px -63px transparent;
+}
+.dot_on {
+    background: url("../images/play_icons.png") repeat scroll -262px -63px transparent;
+}
+#progress {
+    background:#32b3e6;
+    height: 4px;
+    left: 132px;
+    position: absolute;
+    top: 23px;
+    width: 0px;
+    z-index: 2;
+}
+
+#curtime, #endtime {
+    font-size:31px;
+    height: 20px;
+    position: absolute;
+    top: 11px;
+    width: 85px;
+}
+#curtime {
+    left: 30px;
+}
+#endtime {
+    left: 890px;
+}
+#curtime1{
+	font-size: 19px;
+    height: 20px;
+    position: absolute;
+    top: 19px;
+	left: 164px;
+    width: 85px;
+}
+.prognameTip{
+	color: #fff;
+	font-size:25px;
+	line-height: 33px;
+	text-align: left;
+	position: absolute;
+	left: 30px;
+	top: 88px;
+	width:108px;
+}
+#progname {
+	color: #ff9900;
+	font-size:26px;
+	line-height: 33px;
+	text-align: left;
+	position: absolute;
+	left: 150px;
+	top:88px;
+	width: 250px;
+}
+
+#state{
+	position: absolute;
+	top:92px;
+	left: 515px;
+	width: 34px;
+	height: 36px;
+
+}
+#fastForward,#fastRewind{
+    height: 30px;
+    position: absolute;
+    top: 40px;
+    width: 30px;
+	/*新设计中没有快进快退图片，暂时隐藏*/
+	visibility:hidden;
+}
+#fastForward{
+    left: 380px;
+}
+#fastRewind{
+    left: 510px;
+}
+.play_off{
+    background: url("../images/play_icons.png") repeat scroll -19px -15px ;
+}
+.play_on{
+    background: url("../images/play_icons.png") repeat scroll -71px -61px ;
+	}
+.pause_off{
+    background: url("../images/play_icons.png") repeat scroll -71px -15px ;
+}
+.pause_on{
+    background: url("../images/play_icons.png") repeat scroll -18px -61px  ;
+	}
+.fastForward_off{   
+	background: url("../images/play_icon.png") repeat scroll -342px -139px transparent;
+}
+.fastForward_on{
+    background: url("../images/play_icon.png") repeat scroll -342px -41px transparent;
+}
+.fastRewind_off{
+    background: url("../images/play_icon.png") repeat scroll -265px -139px transparent;
+}
+.fastRewind_on{
+    background: url("../images/play_icon.png") repeat scroll -265px -41px transparent;
+}
+
+#clearness{
+    font-size: 26px;
+    height: 42px;
+    left: 900px;
+    position: absolute;
+    top: 85px;
+    width:107px;
+	text-align:center;
+	padding-top:6px;
+	background: url("../images/mi_qh.png") no-repeat; 
+}
+
+#speed{
+	width:200px;
+	height:130px;
+	position:absolute;
+	left:720px;
+	top:-139px;
+}
+.speed4{
+	background: url("../images/vodplay.png") -456px -278px;
+}
+.speed8{
+	background: url("../images/vodplay.png") -656px -278px;
+}
+.speed16{
+	background: url("../images/vodplay.png") -856px -278px;
+}
+.speed32{
+	background: url("../images/vodplay.png") -1056px -278px;
+}
+.speednone{
+/*	background:;
+*/}
+
+.jump_f {
+	border:1px solid #F00;
+
+}
+.jump_b {
+	border:0px solid #F00;
+
+}
+
+#smallwin {
+    background: url("../images/vodplay.png") repeat scroll -16px -256px transparent;
+    color: #00fff6;
+    font-size: 30px;
+    height: 250px;
+    left: 410px;
+    opacity: 1;
+    position: absolute;
+    top: 210px;
+    width: 430px;
+}
+.button0_on {
+	background: url("../images/vodplay.png") repeat scroll -868px -128px transparent;
+	}
+.button1_on {
+	background: url("../images/vodplay.png") repeat scroll -868px -54px transparent;
+	}
+.button0_off {
+    background: url("../images/vodplay.png") repeat scroll -1053px -54px transparent;
+}
+.button1_off {
+    background: url("../images/vodplay.png") repeat scroll -1053px -128px transparent;
+}
+#button0,#button1 {	
+	height: 58px;
+	padding-top: 12px;
+	position: absolute;
+	text-align: center;
+	top: 127px;
+	width: 177px;
+}
+#button0 {	
+	left: 32px;
+}
+#button1 {	
+	left: 218px;
+}
+#content {
+    font-size: 30px;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top:0px;
+    width: 100%;
+}
+.playpause{
+	position:absolute; right:30px; bottom:20px; visibility:hidden; font-size:22px;
+}
+
+
+
+/*---------volume---*/
+#Volume_Div{
+ background:url(../images/volume.png) no-repeat 0px 0px;height: 83px;left: 397px; position: absolute;top: 550px;width: 550px;z-index:999;opacity:1;;
+}
+#volume_mute{
+	 background:url(../images/volume.png) no-repeat -72px -158px;height: 25px;left: 25px;position: absolute;top: 25px;width: 27px;
+}
+#volume {
+    background:url(../images/volume.png) no-repeat -59px -114px; height: 12px;left:60px;position: absolute;top: 33px;width:550px;
+}
+#volume_value {
+    color: #00E1FC;font-size: 28px;left: 490px;position: absolute;top: 24px;
+}

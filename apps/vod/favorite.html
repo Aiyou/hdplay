@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的收藏</title>
+<link href="../../common/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/history.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../static/js/const.js"></script>
+<script type="text/javascript" src="../../static/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+var index = 0;
+var total = 0;
+var listObjs = '#programList td';
+function right()
+{
+	if(index==total-1)
+	{
+		return false;
+	}
+	else
+	{
+		$(listObjs + ".mi_focus").attr('class','mi_border');
+		index++;
+		var tmpobj = $(listObjs + ":eq("+ index +")");
+		tmpobj.attr('class','mi_focus');
+	}
+}
+function left()
+{
+	if(index==0)
+	{
+		return false;
+	}
+	else
+	{
+		$(listObjs + ".mi_focus").attr('class','mi_border');
+		index--;
+		var tmpobj = $(listObjs + ":eq("+ index +")");
+		tmpobj.attr('class','mi_focus');
+	}
+}
+function select()
+{
+	if(total==0)
+	{
+		return false;
+	}
+	//先得到节目ID
+	var id = $(listObjs + ".mi_focus img").attr('tvid');
+	var idx_str = $(listObjs + ".mi_focus img").attr('idx_str');
+	var p_id = $(listObjs + ".mi_focus img").attr('p_id');
+	if(!id)
+	{
+		return false;
+	}
+	window.location.href = 'video_info.html?page=favorite&tvid=0&id=' + id;
+
+}
+function refresh()
+{
+	window.location.href = 'favorite.html';
+}
+function back()
+{
+	window.location.href = '../index/index.html';
+}
+function  init(){
+	var history_str = OVT_script.exec("OvtGetInforFromFile","favorite");
+	if(!history_str)
+	{
+		return false;
+	}
+	var history_arr = new Array();
+	if(history_str.indexOf('|')==-1)
+	{
+		history_arr[0] = history_str;
+		total = 1;
+	}
+	else
+	{
+		var tmp_history_arr = history_str.split('|',12);
+		var tmptotal = tmp_history_arr.length;
+		total = tmptotal;
+		for(var j=0;j<tmptotal;j++)
+		{
+			history_arr[j] = tmp_history_arr[j];
+		}
+	}
+	var tmpstr,linkurl;
+	for(i=0;i<history_arr.length;i++)
+	{
+		tmpstr = str2json(history_arr[i]);
+		$("#programList td:eq(" + i + ")").html('<img idx_str="'+ tmpstr.idx_str +'" tvid='+ tmpstr.id +' p_id='+ tmpstr.p_id+ ' src="'+ tmpstr.pic + '"><br /><span>' + tmpstr.name + '</span>');
+	}
+	$("#programList td:first").attr('class','mi_focus');
+
+}
+</script>
+</head>
+
+<body onload="init()">
+
+   <div class="topArea"> 
+  	<img src="images/history.png" />
+    <h2>我的收藏</h2>
+    <ul>
+      <li class="mi_back">返回</li><!--正常 class="mi_back" 焦点 class="mi_back_on"-->
+    </ul>
+	
+  </div> 
+
+  <div id="programList" class="program">
+  
+  
+ 	<table class="content2">
+		<tbody><tr>
+		<td class="mi_border">&nbsp;</td>
+		<td class="mi_border">&nbsp;</td>
+		<td class="mi_border">&nbsp;</td>
+		<td class="mi_border">&nbsp;</td>
+		<td class="mi_border">&nbsp;</td>
+		<td class="mi_border">&nbsp;</td>
+		</tr>
+		<tr>
+		<td class="mi_border">&nbsp;</td>
+		<td class="mi_border">&nbsp;</td>
+		<td class="mi_border">&nbsp;</td>
+		<td class="mi_border">&nbsp;</td>
+		<td class="mi_border">&nbsp;</td>
+		<td class="mi_border">&nbsp;</td>
+		</tr>
+	</tbody>
+</table> 
+  
+
+ 
+</div>
+
+
+
+</body>
+</html>
+<script>
+function grabEvent(e)
+{
+	var keycode;
+		  
+	//var tmpkey
+	keycode=e.which || e.keyCode;
+
+	switch(keycode)
+	{
+		case ROC_IRKEY_LEFT:
+			left();
+			break;
+		case ROC_IRKEY_RIGHT:
+			right();
+			break;
+		case ROC_IRKEY_SELECT:
+			select();
+			break;
+		case ROC_IRKEY_BACK:
+			back();
+			break;
+		case ROC_IRKEY_UP:
+			refresh();
+			break;
+		case 1285:
+			window.location.href="../index/index.html";
+			break;
+		default :
+				return;
+	}
+	
+}
+document.onkeypress=grabEvent;
+</script>

@@ -1,0 +1,159 @@
+@charset "utf-8";
+*{
+	padding:0px;
+	margin:0px;	
+	color:#FFF;	
+}
+ul,li{
+	list-style:none;
+}
+img{
+	border:0px;
+}
+
+h2{
+	color:#FFF;
+	font-size:29px;
+	position:absolute;
+	left:110px;
+	top:40px;
+}
+h3{
+	color:#666;
+	font-size:23px;
+	position:absolute;
+	left:110px;
+	top:75px;
+}
+/*content*/
+.content{
+	margin:0px auto;
+	text-align:center;
+	width:1280px;
+	height:720px;
+	overflow:hidden;
+	background:url(../../channelback/images/bg.jpg) no-repeat;
+	position:relative;
+}
+
+.titleIcon{
+	position:absolute;
+	left:58px;
+	top:0px;
+	width:56px;
+	height:100px;
+}
+
+/*program*/
+.program{
+	width:922px;
+	height:auto;
+	position:absolute;
+	top:150px;
+	left:200px;
+}
+.program #programFocus{
+	background:url(../images/icon.png) no-repeat -10px -59px;
+	width:155px;
+	height:220px;
+	position:absolute;
+	left:-6px;
+	top:-6px;
+	visibility:hidden;
+	z-index:1;
+	
+	
+}
+.program .content2,.program .content3{
+	width:auto;
+	height:267px;
+	z-index:99;
+}
+.program .content3{
+	margin-top:0px;
+}
+.program li{
+	text-align:center;
+	float:left;
+	height:217px;
+	width:180px;
+/*	width:148px;
+	margin-right:7px;
+*/	display:block;
+}
+.program img{
+	border:1px solid ##666;
+	width:139px;
+	height:206px;
+}
+.program h1{
+	font-size:23px;
+	margin-top:13px;
+	height:20px;
+}
+/*当前节目的焦点状态*/
+.program .curProgram h1{
+	font-size:23px;
+	color:#ff9000;
+}
+.program .curProgram img{
+	width:139px;
+	height:206px;
+	margin-top:0px;
+	border:0px;
+}
+
+.mepg {
+	display:block;
+	background:url(../images/nopic_index_on.jpg);
+	width:139px;
+	height:206px;
+}
+
+.pageControl{
+	position:absolute;
+	clear:both;
+	width:278px;
+	left:265px;
+	bottom:-45px;
+}
+.pageControl #page0,.pageControl #page1,.pageControl .text{
+	width:114px;
+	height:40px;
+	line-height:40px;
+	font-weight:bold;
+	float:left;
+}
+.pageControl .text{
+	width:50px;
+	color:#00ccff;
+}
+.pageControl .show{
+	background:url(../images/icon.png) -9px -10px no-repeat;
+	color:#000000;
+}
+.pageControl .hide{
+	background:url(../images/icon.png) -173px -10px no-repeat;
+	color:#fff;
+}
+
+/*small_button*/
+#small_button{
+	position:absolute;
+	left:900px;
+	top:95px;
+	width:auto;	
+}
+#small_button li{
+	float:left;
+	width:60px;
+	line-height:40px;
+	display:block;
+	text-align:center;
+	font-weight:bold;
+	color:#999;
+}
+#small_button .onfocus{
+	font-size:24px;
+	color:#00ffff;
+}

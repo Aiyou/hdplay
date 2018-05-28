@@ -1,0 +1,255 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	padding:0;margin:0;font-family:"Microsoft YaHei" !important;text-shadow:3px -3px 3px #000;
+}
+body {
+	margin:0;padding:0;color:#FFF;border:0px;width:1280px; height:720px;background:url(../images/bg.png) no-repeat;
+}
+img {
+	border:0;
+}
+#channel_top{
+	height:35px; width:204px; text-align:center; font-size:28px; color:#6b6161; position:absolute; top:40px; right:82px;
+}
+#channel_menu{
+	height:195px; width:1280px; color:#8c8c8c; font-size:24px;
+}
+#channel_menu ul{
+	height:195px;width:auto; vertical-align:middle;list-style-type:none; padding-left:74px;
+}
+#channel_menu ul li{
+	list-style-type:none; height:24px; display:inline-block;  padding:92px 55px 73px 55px; width:auto; float:left;
+}
+#channel_menu .focus{
+	color:#FFF; background:url(../images/menu_focus.png)  no-repeat 0px 34px;
+}
+#channel_menu .focus_02{
+	color:#FFF; background:url(../images/menu_focus_02.png)  no-repeat -15px 34px;
+}
+#channel_menu .focus_03{
+	color:#FFF; background:url(../images/menu_focus_03.png)  no-repeat -25px 34px;
+}
+/*-------直播电视-----*/
+#channel_content{
+	position:absolute; top:165px; height:555px; left:-1280px; width:1280px; 
+}
+#channel_content #imgBox_1{
+	position:absolute; left:118px; top:0px; height:210px; width:526px; z-index:1; 
+}
+#channel_content #imgBox_2{
+	position:absolute; left:646px; top:0px; height:210px; width:262px; z-index:1; 
+}
+#channel_content #imgBox_3{
+	position:absolute; left:910px; top:0px; height:422px; width:280px;z-index:1; 
+}
+#channel_content #imgBox_4{
+	position:absolute; left:118px; top:212px; height:210px; width:262px; z-index:1; 
+}
+#channel_content #imgBox_5{
+	position:absolute; left:382px; top:212px; height:210px; width:262px;z-index:1; 
+}
+#channel_content #imgBox_6{
+	position:absolute; left:646px; top:212px; height:210px; width:262px;z-index:1; 
+}
+
+#img_1{
+	width:526px; height:210px;border:1px; border-color:#666; 
+}
+#img_2{
+	width:262px; height:210px;border:1px; border-color:#666;
+}
+#img_3{
+	width:280px; height:422px;border:1px; border-color:#666;
+}
+#img_4{
+	width:262px; height:210px;border:1px; border-color:#666;
+}
+#img_5{
+	width:262px; height:210px;border:1px; border-color:#666;
+}
+#img_6{
+	width:262px; height:210px;border:1px; border-color:#666;
+}
+#img_border{
+position:absolute; top:-20px; left:98px; height:254px; width:570px; z-index:3; display:inline-block; visibility:hidden; 
+}
+#ch_shadow{
+	position:absolute; top:585px; left:-1280px; width:1070px; height:116px; z-index:3; padding-left:118px;
+}
+/*-----点播-------*/
+#vod_content{
+	position:absolute; top:165px; height:555px; /*left:0px;*/ width:1280px; left:1280px;
+}
+#vod_content #vod_imgBox_1{
+	position:absolute; left:118px; top:0px; height:422px; width:279px; z-index:1; 
+}
+#vod_content #vod_imgBox_2{
+	position:absolute; left:399px; top:0px; height:210px; width:220px; z-index:1; 
+}
+#vod_content #vod_imgBox_3{
+	position:absolute; left:621px; top:0px; height:210px; width:279px;z-index:1; 
+}
+#vod_content #vod_imgBox_4{
+	position:absolute; left:902px; top:0px; height:210px; width:279px; z-index:1; 
+}
+#vod_content #vod_imgBox_5{
+	position:absolute; left:399px; top:212px; height:210px; width:220px; z-index:1; 
+}
+#vod_content #vod_imgBox_6{
+	position:absolute; left:621px; top:212px; height:210px; width:279px;z-index:1; 
+}
+#vod_content #vod_imgBox_7{
+	position:absolute; left:902px; top:212px; height:210px; width:279px; z-index:1; 
+}
+
+#vod_img_1{
+	width:279px; height:422px;border:1px; border-color:#666; 
+}
+#vod_img_2{
+	width:220px; height:210px;border:1px; border-color:#666;
+}
+#vod_img_3{
+	width:279px; height:210px;border:1px; border-color:#666;
+}
+#vod_img_4{
+	width:279px; height:210px;border:1px; border-color:#666;
+}
+#vod_img_5{
+	width:220px; height:210px;border:1px; border-color:#666;
+}
+#vod_img_6{
+	width:279px; height:210px;border:1px; border-color:#666;
+}
+#vod_img_7{
+	width:279px; height:210px;border:1px; border-color:#666;
+}
+#vod_border{
+	position:absolute; top:-20px; left:98px; height:466px; width:322px; z-index:3; display:inline-block; visibility:hidden; 
+}
+#vod_shadow{
+	position:absolute; top:585px;/* left:116px;*/  left:1280px;width:1070px; height:117px; z-index:3; padding-left:116px;
+}
+/*-------排行榜-----*/
+#sort_content{
+	position:absolute; top:165px; height:555px; /*left:0px;*/ width:1280px; left:1280px;
+}
+#sort_content #sort_imgBox_1{
+	position:absolute; left:118px; top:0px; height:422px; width:279px; z-index:1; 
+}
+#sort_content #sort_imgBox_2{
+	position:absolute; left:399px; top:0px; height:422px; width:219px; z-index:1; 
+}
+#sort_content #sort_imgBox_3{
+	position:absolute; left:620px; top:0px; height:210px; width:562px;z-index:1; 
+}
+#sort_content #sort_imgBox_4{
+	position:absolute; left:620px; top:212px; height:210px; width:562px; z-index:1; 
+}
+
+
+#sort_img_1{
+	width:279px; height:422px;border:1px; border-color:#666; 
+}
+#sort_img_2{
+	width:219px; height:422px;border:1px; border-color:#666;
+}
+#sort_img_3{
+	width:562px; height:210px;border:1px; border-color:#666;
+}
+#sort_img_4{
+	width:562px; height:210px;border:1px; border-color:#666;
+}
+
+#sort_border{
+	position:absolute; top:-20px; left:98px; height:466px; width:323px; z-index:3; display:inline-block; visibility:hidden; 
+}
+#sort_shadow{
+	position:absolute; top:585px;/* left:116px;*/  left:1280px;width:1070px; height:117px; z-index:3; padding-left:116px;
+}
+/*-------用户-----*/
+#user_content{
+	position:absolute; top:165px; height:555px; /*left:0px;*/ width:1280px; left:1280px;
+}
+#user_content #user_imgBox_1{
+	position:absolute; left:118px; top:0px; height:422px; width:502px; z-index:1; 
+}
+#user_content #user_imgBox_2{
+	position:absolute; left:622px; top:0px; height:210px; width:562px; z-index:1; 
+}
+#user_content #user_imgBox_3{
+	position:absolute; left:622px; top:212px; height:210px; width:562px;z-index:1; 
+}
+
+#user_img_1{
+	width:502px; height:422px;border:1px; border-color:#666; 
+}
+#user_img_2{
+	width:562px; height:210px;border:1px; border-color:#666;
+}
+#user_img_3{
+	width:562px; height:210px;border:1px; border-color:#666;
+}
+#user_border{
+	position:absolute; top:-20px; left:98px; height:466px; width:322px; z-index:3; display:inline-block; visibility:hidden; 
+}
+#user_shadow{
+	position:absolute; top:585px;/* left:116px;*/  left:1280px;width:1070px; height:117px; z-index:3; padding-left:116px;
+}
+/*-------系统设置-----*/
+
+#sys_content{
+	position:absolute; top:165px; height:555px; /*left:0px;*/ width:1280px; left:1280px;
+}
+#sys_content #sys_imgBox_1{
+	position:absolute; left:118px; top:0px; height:422px; width:278px; z-index:1; 
+}
+#sys_content #sys_imgBox_2{
+	position:absolute; left:398px; top:0px; height:210px; width:336px; z-index:1; 
+}
+#sys_content #sys_imgBox_3{
+	position:absolute; left:738px; top:0px; height:422px; width:425px;z-index:1; 
+}
+#sys_content #sys_imgBox_4{
+	position:absolute; left:398px; top:212px; height:210px; width:336px; z-index:1; 
+}
+
+
+#sys_img_1{
+	width:278px; height:422px;border:1px; border-color:#666; 
+}
+#sys_img_2{
+	width:336px; height:210px;border:1px; border-color:#666;
+}
+#sys_img_3{
+	width:425px; height:422px;border:1px; border-color:#666;
+}
+#sys_img_4{
+	width:336px; height:210px;border:1px; border-color:#666;
+}
+#sys_border{
+	position:absolute; top:-20px; left:98px; height:466px; width:322px; z-index:3; display:inline-block; visibility:hidden; 
+}
+#sys_shadow{
+	position:absolute; top:585px;/* left:116px;*/  left:1280px;width:1070px; height:117px; z-index:3; padding-left:116px;
+}
+#sys_imgBox_content{
+	height: 322px;
+    left: 768px;
+    position: absolute;
+    top: 50px;
+    width: 380px;
+    z-index: 2;
+}
+#sys_imgBox_content ul{
+	height:auto;width:380px;font-size:23px;color:#ffffff;vertical-align:middle;list-style-type:none;
+}
+#sys_imgBox_content ul li{
+	list-style-type:none;height:55px;
+}
+#sys_imgBox_content .sys_name{
+	width:100px; height:55px; display:inline-block;text-align:left;line-height:55px; vertical-align:middle;
+}
+#sys_imgBox_content .sys_value{
+	width:270px; height:55px; display:inline-block;line-height:55px; vertical-align:middle;white-space:nowrap; overflow:hidden;text-align:left;
+}

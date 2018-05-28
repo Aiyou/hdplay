@@ -1,0 +1,104 @@
+@charset "utf-8";
+#keyboard{
+	padding-top: 20px;
+	width: 415px;
+	height: 633px;
+	left: 813px;
+	top: 67px;
+	position:absolute;
+	z-index: 800;
+	background:url(../images/key_bg.png) no-repeat;
+	padding-right:52px;
+	display:none;
+}
+
+#keyboard li {
+	float: left;
+	font-size: 28px;
+	text-align: center;list-style-type:none;
+}
+#keyboard ul div {
+	float: left;width: 415px;
+}
+
+.keyboardContainerUp {
+	height: 462px;
+}
+.bottomControl{
+	height:47px;
+}
+.MiddleKey {
+	width: 75px;
+	height: 77px;
+	line-height: 77px;
+}
+
+.FakeBlock {
+	width: 40px;
+	height: 77px;
+	line-height: 77px;
+	margin-top: -11px;
+	background:#red;
+}
+
+.FakeRow {
+	width: 415px;
+	height: 43px;
+}
+
+.FakeRow2 {
+	width: 502px;
+	height: 3px;
+}
+.FakeRow3 {
+	width: 415px;
+	height: 13px;
+}
+.FakeBlock2 {
+	width: 63px;
+	height: 47px;
+	line-height: 47px;
+}
+
+.bigFontSize {
+   font-size: 28px !important;font-family:"Tahoma";
+}
+.FunctionKey {
+    font-size: 24px !important;font-family:"SimHei"; font-weight:bold;
+}
+
+.KeyFocus {
+	background:url(../images/key_part_bg.png) no-repeat -135px -70px;
+}
+.SwitchKey {
+	width: 88px;
+	height: 47px;
+	line-height: 47px;
+	background:url(../images/key_part_bg.png) no-repeat -135px -15px; font-size: 21px !important;font-family:"SimHei";
+}
+.SwitchKeyCur {
+	width: 88px;
+	height: 47px;
+	line-height: 47px;
+	background:url(../images/key_part_bg.png) no-repeat -10px -15px;font-size: 21px !important;font-family:"SimHei";
+}
+.SwitchKeyFocus {
+	width: 88px;
+	height: 47px;
+	line-height: 47px;
+	background:url(../images/key_part_bg.png) no-repeat -10px -84px;  !important;font-size: 21px !important;font-family:"SimHei";
+}
+
+#keyboardTip{
+	position:absolute; width:428px; height:216px;left:425px; top:245px; visibility:hidden;z-index:999; background:url(../images/buffer.png) no-repeat;
+}
+#keyboardTip #tipContent{
+	padding-top:105px; padding-left:75px; width:285px; height:30px; position:relative; font-size:22px;
+ text-align:center;
+}
+/*输入框加个标志*/
+.keyInputFocus{
+	border:solid 3px #30FF00;
+/*	background:#fff!important;
+	color:#000!important;*/
+}

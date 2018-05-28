@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系统设置</title>
+<link href="../../common/css/style.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="css/sys_setting.css" />
+<link href="css/keyboard.css" rel="stylesheet" type="text/css" />
+<script src="../../common/js/ovt.js"></script>
+<script src="../../common/js/global.js"></script>
+<script src="js/keylang.js"></script>
+<script src="js/keyboard.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/sys_setting.js"></script>
+<script type="text/javascript">
+document.onkeypress = grabEvent;
+function grabEvent(event){
+		var val = event.which | event.keyCode;
+		switch(val){
+			case ROC_IRKEY_UP:
+			case 38:
+				if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_Up();
+				 }else{
+					menuArea.up();
+				 }
+			break;
+			case ROC_IRKEY_DOWN:
+			case 40:
+				if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_Down();
+				 }else{
+					menuArea.down();
+				 }
+				
+			break;
+			case ROC_IRKEY_LEFT:
+			case 37:
+				if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_Left();
+				 }else{
+					var userIP = $("input_IP");
+					var userCode = $("input_code");
+					var input_userIP = getPositionForInput(userIP);
+					var input_userCode = getPositionForInput(userCode);
+					if(userIndex == 0){
+						if( input_userIP == 0) {
+							menuArea.left();
+						}
+					}else if(userIndex == 1){
+						if( input_userCode == 0) {
+							menuArea.left();
+						}
+					}else{
+						menuArea.left();
+					}
+				 }
+				 /*if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_Left();
+				 }else{
+					pageLeft();
+				 }*/
+				//menuArea.left();
+			break;
+			case ROC_IRKEY_RIGHT:
+			case 39:
+				if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_Right();
+				 }else{
+					menuArea.right();
+				 }
+				
+			break;
+			case ROC_IRKEY_SELECT:
+			case 13:
+				if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_Enter();
+					
+				 }else{
+					menuArea.href();
+					
+				 }
+			break;
+			case  ROC_IRKEY_NUM0:
+				 if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_0();
+				 }
+				break;
+			case  ROC_IRKEY_NUM1:
+				 if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_1();
+				 }
+				break;
+			case  ROC_IRKEY_NUM2:
+				 if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_2();
+				 }
+				break;
+			case  ROC_IRKEY_NUM3:
+				 if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_3();
+				 }
+				break;
+			case  ROC_IRKEY_NUM4:
+				 if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_4();
+				 }
+				break;
+			case  ROC_IRKEY_NUM5:
+				 if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_5();
+				 }
+				break;
+			case  ROC_IRKEY_NUM6:
+				 if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_6();
+				 }
+				break;
+			case  ROC_IRKEY_NUM7:
+				 if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_7();
+				 }
+				break;
+			case  ROC_IRKEY_NUM8:
+				 if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_8();
+				 }
+				break;
+			case  ROC_IRKEY_NUM9:
+				 if( keyboard.keyBoardAreaFocus ){
+					 keyboard.con_9();
+				 }
+				break;
+			case ROC_IRKEY_BACK:
+			case 8:
+				if( keyboard.keyBoardAreaFocus ){
+					 //keyboard.con_Esc();
+					 keyboard.outFocus();//改返回到主菜单为到文本框上
+					 areaIndex =1;
+					 return false;
+				 }else{
+					 if(areaIndex ==0){
+						 window.location.href="../index/index.html";
+					}else if(areaIndex ==1){
+						/*if(userIndex == 2){
+							//window.location.href="../../../../index.html";
+							window.location.href="../index/index.html";
+							return "";
+						}else if(userIndex == 0){
+							var userIP = $("input_IP");
+							var userIP_index = getPositionForInput(userIP);
+							if( userIP_index != 0 ) {
+								return "";
+							}
+						}else if(userIndex == 1){
+							var userCode = $("input_code");
+							var userCode_index = getPositionForInput(userCode);
+							if( userCode_index != 0){
+								return "";
+							}
+						}*/
+						window.location.href="../index/index.html";
+						return false;
+					}
+					/*if(areaIndex ==1){
+						if(userIndex == 0){
+							var userIP = $("input_IP");
+							var userIP_index = getPositionForInput(userIP);
+							if( userIP_index != 0 ) {
+								return "";
+							}
+						}else if(userIndex == 1){
+							var userCode = $("input_code");
+							var userCode_index = getPositionForInput(userCode);
+							if( userCode_index != 0){
+								return "";
+							}
+						}else{
+							//window.location.href="../../../../index.html";
+							window.location.href="../index/index.html";
+						}
+					}else{
+						//window.location.href="../../../../index.html";
+						window.location.href="../index/index.html";
+					}*/
+				}
+				return false;
+			break;
+			case ROC_IRKEY_EXIT:
+			case 1285:
+				if( keyboard.keyBoardAreaFocus ){
+					 //keyboard.con_Esc();
+					 keyboard.outFocus();//改返回到主菜单为到文本框上
+					 areaIndex =1;
+					 return false;
+				 }else{
+					 window.location.href="../index/index.html";
+				 }
+			break;
+		}
+}
+
+function init(){
+	Navigation.disableDefaultNavigation();//禁用超链接自动聚焦功
+	//Navigation.disableHighlight();
+	menuArea.init();
+	getLanguage();
+}
+</script>
+</head>
+
+<body onload="init()">
+<!--<div id="aaa" style="position:absolute; left:300px; top:100px; width:300px; height:50px; color:red; z-index:999999"></div>-->
+<div class="setting_logo"></div>
+<div id="logo_text"></div>
+<div class="back_area">
+	<div class="back_logo"></div>
+	<div id="back_text"></div>
+</div>
+<div style="display:none"><img src="images/sys_bg.jpg" /></div>
+<div id="menu_area">
+	<div id="menu_up"></div>
+    <div id="menu_recover"></div>
+    <div id="menu_user"></div>
+    <div id="menu_video"></div></div>
+<div id="up_area">
+	<div id="up_button"></div>
+    <div id="up_button_text"></div>
+	<div id="up_text"></div>
+</div>
+<div id="recover_area">
+	<div id="recover_button"></div>
+    <div id="recover_button_text"></div>
+	<div id="recover_text"></div>
+</div>
+<div id="user_area">
+	<div id="user_IP"></div> 
+   <!-- <div id="user_IP_0"><input type="text" id="input_IP" style=" overflow:scroll;" value="31.3.253.18"/></div>-->
+    <div id="user_IP_0"><div id="input_IP" style=" overflow:scroll;"></div></div>
+    <div id="user_Name"></div> 
+  <div id="user_Name_0"><div id="input_Name" style=" overflow:scroll;"></div></div>
+<div id="user_code"></div> 
+    <!--<div id="user_code_0"><input type="password" id="input_code" style=" overflow:scroll;" value="1234567890"/></div>-->
+    <div id="user_code_0"><div id="input_code" style=" overflow:scroll;"></div></div>
+    <div id="pwdUserCode" ></div><!--密码框隐藏域-->
+    
+	<div id="btn_content"></div>
+    <div id="content_text"></div>
+    
+<!--   <div id="name_id"></div>
+    <div id="user_id"></div>
+    <div id="name_start"></div>
+    <div id="user_start"></div>
+    <div id="name_end"></div>
+    <div id="user_end"></div>
+	<div id="name_effec"></div>
+    <div id="user_effect"></div>
+	<div id="name_level"></div>
+    <div id="user_level"></div>
+	<div id="name_state"></div>
+    <div id="user_state"></div>
+    -->
+</div>
+<div id="video_area">
+	<div id="video_type"></div> 
+    <div id="video_type_0">
+    	 <select name="type_area" id="type_area" >
+            <option id="hd" value="hd" class="op" selected="selected"></option>
+            <option id="sd" value="sd" class="op" ></option>
+        </select>
+    </div>
+    <div id="video_format"></div> 
+    <div id="video_format_0">
+    	 <select name="format_area" id="format_area" >
+            <option value="pal" class="op" >pal</option>
+            <option value="ntsc" class="op">ntsc</option>
+            <option value="720pla" class="op">720pla</option>
+            <option value="720pli" class="op">720pli</option>
+            <option value="1080pla" class="op" selected="selected">1080pla</option>
+            <option value="1080pli" class="op">1080pli</option>
+            <option value="1080ila" class="op">1080ila</option>
+            <option value="1080ili" class="op">1080ili</option>
+        </select>
+    </div>
+    <div id="video_scale"></div> 
+    <div id="video_scale_0">
+    	 <select name="scale_area" id="scale_area" >
+            <option value="16_9" class="op" >16:9</option>
+        	<option value="4_3" class="op">4:3</option>
+        </select>
+    </div>
+<!--    <div id="video_iframe"></div> 
+    <div id="video_iframe_0">
+    	 <select name="iframe_area" id="iframe_area" >
+             <option id="no" value="no" class="op" ></option>
+        	<option id="yes" value="yes" class="op"></option>
+        </select>
+    </div>-->
+    <div id="video_lang"></div> 
+    <div id="video_lang_0">
+         <select name="lang_area" id="lang_area" >
+            <option id="eng" value="eng" class="op" selected="selected"></option>
+            <option id="gr" value="gr" class="op" ></option>
+            <option id="fr" value="fr" class="op" ></option>
+            <option id="tr" value="tr" class="op" ></option>
+        </select>
+    </div>
+    <div id="time_zone"></div>
+    <div id="time_zone_0"></div>
+    <div id="time_zone_show"></div>
+    <div id="video_save"></div>
+    <div id="video_save_text"></div>
+    <div id="video_cancel"></div>
+    <div id="video_cancel_text"></div>
+</div>
+
+<div id="tip_area">
+	<div id="tip_text"></div>
+    <div id="tip_sure_text"></div>
+    <div id="tip_cancel_text"></div>
+    <div id="tip_sure"></div>
+    <div id="tip_cancel"></div>
+</div>
+<div id="tipTip">
+    <div id="tipTip_content"></div>
+</div>
+<!--键盘代码页面-->
+<div id="keyboard">
+		<ul id="keyboard_whole" style="display: none;">
+			<div id="switchLetter" class="keyboardContainerUp" style="display:block;">
+				<li class="FakeBlock"> </li>
+				<li id="key_a" class="MiddleKey bigFontSize">a</li>
+				<li id="key_b" class="MiddleKey bigFontSize">b</li>
+				<li id="key_c" class="MiddleKey bigFontSize">c</li>
+				<li id="key_d" class="MiddleKey bigFontSize">d</li>
+				<li id="key_e" class="MiddleKey bigFontSize">e</li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_f" class="MiddleKey bigFontSize">f</li>
+				<li id="key_g" class="MiddleKey bigFontSize">g</li>
+				<li id="key_h" class="MiddleKey bigFontSize">h</li>
+				<li id="key_i" class="MiddleKey bigFontSize">i</li>
+				<li id="key_j" class="MiddleKey bigFontSize">j</li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_k" class="MiddleKey bigFontSize">k</li>
+				<li id="key_l" class="MiddleKey bigFontSize">l</li>
+				<li id="key_m" class="MiddleKey bigFontSize">m</li>
+				<li id="key_n" class="MiddleKey bigFontSize">n</li>
+				<li id="key_o" class="MiddleKey bigFontSize">o</li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_p" class="MiddleKey bigFontSize">p</li>
+				<li id="key_q" class="MiddleKey bigFontSize">q</li>
+				<li id="key_r" class="MiddleKey bigFontSize">r</li>
+				<li id="key_s" class="MiddleKey bigFontSize">s</li>
+				<li id="key_t" class="MiddleKey bigFontSize">t</li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_u" class="MiddleKey bigFontSize">u</li>
+				<li id="key_v" class="MiddleKey bigFontSize">v</li>
+				<li id="key_w" class="MiddleKey bigFontSize">w</li>
+				<li id="key_x" class="MiddleKey bigFontSize">x</li>
+				<li id="key_y" class="MiddleKey bigFontSize">y</li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="fun_del_letter" class="MiddleKey FunctionKey"></li>
+				<li class="MiddleKey"> </li>
+				<li id="key_z" class="MiddleKey bigFontSize">z</li>
+				<li class="MiddleKey"> </li>
+				<li id="fun_enter_letter" class="MiddleKey FunctionKey"></li>
+			</div>
+			<div id="switchNumber"  class="keyboardContainerUp" style="display: none">
+				<li class="FakeBlock"> </li>
+				<li id="key_1" class="MiddleKey bigFontSize">1</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_2" class="MiddleKey bigFontSize">2</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_3" class="MiddleKey bigFontSize">3</li>
+	
+				<li class="FakeRow"> </li>
+	
+				<li class="FakeBlock"> </li>
+				<li id="key_4" class="MiddleKey bigFontSize">4</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_5" class="MiddleKey bigFontSize">5</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_6" class="MiddleKey bigFontSize">6</li>
+				
+				<li class="FakeRow"> </li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_7" class="MiddleKey bigFontSize">7</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_8" class="MiddleKey bigFontSize">8</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_9" class="MiddleKey bigFontSize">9</li>						
+				
+				<li class="FakeRow"> </li>
+				<li class="FakeRow2"> </li>
+				
+				
+				<li class="FakeBlock"> </li>
+				<li id="fun_del_num" class="MiddleKey FunctionKey"></li>
+				<li class="MiddleKey"> </li>
+				<li id="key_0" class="MiddleKey bigFontSize">0</li>
+				<li class="MiddleKey"> </li>
+				<li id="fun_enter_num" class="MiddleKey FunctionKey"></li>
+			</div>
+			<div id="switchSymbol"  class="keyboardContainerUp" style="display: none">
+				<li class="FakeBlock"> </li>
+				<li id="key_sym1" class="MiddleKey bigFontSize">@</li>
+				<li id="key_sym2" class="MiddleKey bigFontSize">.</li>
+				<li id="key_sym3" class="MiddleKey bigFontSize">,</li>
+				<li id="key_sym4" class="MiddleKey bigFontSize">?</li>
+				<li id="key_sym5" class="MiddleKey bigFontSize">!</li>
+				
+				<li class="FakeRow3"> </li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_sym6" class="MiddleKey bigFontSize">;</li>			
+				<li id="key_sym7" class="MiddleKey bigFontSize">:</li>
+				<li id="key_sym8" class="MiddleKey bigFontSize">''</li>
+				<li id="key_sym9" class="MiddleKey bigFontSize">*</li>	
+				<li id="key_sym10" class="MiddleKey bigFontSize">+</li>	
+				
+				<li class="FakeRow3"> </li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_sym11" class="MiddleKey bigFontSize">-</li>			
+				<li id="key_sym12" class="MiddleKey bigFontSize">=</li>
+				<li id="key_sym13" class="MiddleKey bigFontSize">#</li>
+				<li id="key_sym14" class="MiddleKey bigFontSize">$</li>	
+				<li id="key_sym15" class="MiddleKey bigFontSize">%</li>		
+                
+                <li class="FakeRow3"> </li>		
+                
+				<li class="FakeBlock"> </li>
+				<li id="key_sym16" class="MiddleKey bigFontSize">&lt;</li>			
+				<li id="key_sym17" class="MiddleKey bigFontSize">&gt;</li>
+				<li id="key_sym18" class="MiddleKey bigFontSize"> / </li>
+				<li id="key_sym19" class="MiddleKey bigFontSize"> ^ </li>	
+				<li id="key_sym20" class="MiddleKey bigFontSize"> ~ </li>					
+				
+				<li class="FakeRow3"> </li>
+				<li class="FakeRow2"> </li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="fun_del_sym" class="MiddleKey FunctionKey"></li>
+				<li class="MiddleKey"> </li>
+				<li id="fun_space" class="MiddleKey FunctionKey"></li>
+				<li class="MiddleKey"> </li>
+				<li id="fun_enter_sym" class="MiddleKey FunctionKey"></li>
+			</div>
+			<div id="switchArea" class="bottomControl">	
+                <li class="FakeBlock2"> </li>
+                <li id="switch_small" class="SwitchKeyCur"></li>
+                <li id="switch_big" class="SwitchKey"></li>
+                <li id="switch_num" class="SwitchKey"></li>
+                <li id="switch_sym" class="SwitchKey"></li>
+			</div>	
+			<div style="clear:both"> </div>
+		</ul>
+		
+		<ul id="keyboard_ipinput" style="display: none; width:415px;">
+			
+			<li class="FakeBlock"> </li>
+			<li id="key_ip_1" class="MiddleKey bigFontSize">1</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_2" class="MiddleKey bigFontSize">2</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_3" class="MiddleKey bigFontSize">3</li>
+			
+			<li class="FakeRow"> </li>
+
+			<li class="FakeBlock"> </li>
+			<li id="key_ip_4" class="MiddleKey bigFontSize">4</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_5" class="MiddleKey bigFontSize">5</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_6" class="MiddleKey bigFontSize">6</li>
+			
+			<li class="FakeRow"> </li>
+			
+			<li class="FakeBlock"> </li>
+			<li id="key_ip_7" class="MiddleKey bigFontSize">7</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_8" class="MiddleKey bigFontSize">8</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_9" class="MiddleKey bigFontSize">9</li>	
+			
+			<li class="FakeRow"> </li>					
+			
+			<li class="FakeBlock"> </li>
+			<li id="fun_ip_del_num" class="MiddleKey FunctionKey"></li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_0" class="MiddleKey bigFontSize">0</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_dot" class="MiddleKey FunctionKey">.</li>			
+			
+			<li class="FakeBlock"> </li>
+			<li class="MiddleKey"> </li>
+			<li class="MiddleKey"> </li>
+			<li id="fun_enter_ip" class="MiddleKey FunctionKey"></li>
+
+			<div style="clear:both"> </div>
+		</ul>
+	</div>
+    <div id = "keyboardTip">
+    	<div id ="tipContent"></div>
+    </div>
+<!--键盘代码结束-->
+</body>
+</html>

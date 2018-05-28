@@ -1,0 +1,215 @@
+@charset "utf-8";
+*{
+	padding:0px;
+	margin:0px;	
+	color:#FFF;	
+}
+ul,li{
+	list-style:none;
+}
+img{
+	border:0px;
+}
+
+/*content*/
+.content{
+	position:relative;
+	margin:0px auto;
+	width:1280px;
+	height:720px;
+	overflow:hidden;
+	background:url(../images/mi_detail.jpg);
+}
+.top{ position:absolute; left:1035px; top:24px; height:37px; width:200px; font-size:28px; color:#6b6161;}
+/*topArea*/
+/*.content .topArea{
+	width:100%;
+	height:118px;
+}
+.topArea img{
+	position:absolute;
+	left:37px;
+	top:28px;
+}
+.topArea h2{
+	position:absolute;
+	left:100px;
+	top:28px;
+	color:#CCC;
+
+}
+.topArea ul{
+	position:absolute;
+	left:340px;
+	top:28px;
+}
+.topArea li{
+	float:left;
+	margin-right:10px;
+	width:auto;
+	font-size:23px;
+	color:#CCC;
+}
+*//*nav*/
+.nav{
+	position:absolute;
+	left:115px;
+	top:57px;
+	background:url(../images/nopic_b.jpg);
+	width:286px;
+	height:386px;
+
+}
+.nav img{
+	width:286px;
+	height:386px;
+}
+.description{
+	width:785px;
+	position:absolute;
+	left:420px;
+	top:57px;
+}
+
+.description h2{
+	font-size:30px;
+	font-weight:bolder;
+}
+.description h3{
+	margin-top:5px;
+	font-size:24px;
+	color:#999;
+}
+.description p{
+	margin-top:10px;
+	font-size:24px;	
+	line-height:30px;
+}
+
+.button{
+	position:absolute;
+	left:419px;	
+	top:380px;
+	width:auto;
+}
+.button div{
+	float:left;
+	width:141px;
+	height:60px;
+	margin-right:30px;
+	background:url(../images/mi_icon.png) -4px -85px no-repeat;
+}
+.button div span{
+	display:block;
+	float:left;
+	height:55px;
+	line-height:55px;
+	text-align:center;
+}
+.button_1,.button_2,.button_3{
+	width:60px;
+	background:url(../images/mi_icon.png) -4px -166px no-repeat;
+}
+.button_2{
+	background-position:-59px -166px;
+}
+.button_3{
+	background-position:-120px -166px;
+}
+.button_content{
+	width:81px;
+	font-size:24px;
+}
+.button_focus{
+	/*background:url(../images/mi_icon.png) -158px -85px;*/
+	background:url(images/mi_icon.png);
+}
+
+
+/*推荐节目*/
+.recommend{
+	position:absolute;
+	width:auto;
+	left:113px;
+	top:516px;
+}
+
+.recommend li{
+	float:left;
+	position:relative;
+	margin-left:8px;
+	margin-right:8px;
+	width:105px;
+	height:153px;
+	background:url(../images/nopic_index.jpg) 25% 50% ;	
+}
+.recommend h2{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	line-height:20px;
+	font-size:15px;
+	text-align:center;
+	background:url(../images/mi_icon.png) 0 -250px;
+	visibility:hidden;
+}
+.recommend img{
+	 width:100%;
+	 height:100%;
+
+}
+
+/*选集*/
+.moreItem{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	height:269px;
+	background:#000;
+	border-top:1px solid #09F;
+}
+.moreItem h2{
+	width:100%;
+	height:50px;
+	padding-left:118px;
+	padding-top:30px;
+	font-size:24px;
+}
+#itemList{
+	position:absolute;
+	left:0px;
+	top:90px;
+}
+#itemList li{
+	float:left;
+	width:127px;
+	line-height:60px;
+	text-align:center;
+	font-size:24px;
+	border-right:1px solid #999;
+	border-top:1px solid #999;
+	border-bottom:1px solid #999;
+}
+#itemArea{
+	position:absolute;
+	left:0px;
+	top:150px
+}
+#itemArea li{
+	float:left;
+	width:127px;
+	line-height:60px;
+	text-align:center;
+	font-size:24px;	
+}
+
+#itemFocus{
+	position:absolute;
+	left:0px;
+	top:90px;
+	width:127px;
+	height:60px;
+	background:url(../images/mi_icon.png) -158px -85px;
+}

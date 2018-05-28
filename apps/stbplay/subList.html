@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>本地播放</title>
+<link type="text/css" rel="stylesheet" href="css/subList.css" />
+<script src="../../common/js/ovt.js"></script>
+<script src="../../common/js/global.js"></script>
+<script type="text/javascript" src="js/subList.js"></script>
+
+<script type="text/javascript">
+document.onkeypress = grabEvent;
+function grabEvent(event){
+		var val = event.which | event.keyCode;
+		switch(val){
+			case ROC_IRKEY_UP:
+			case 38:
+				menuArea.up();
+			break;
+			case ROC_IRKEY_DOWN:
+			case 40:
+				menuArea.down();
+			break;
+			case ROC_IRKEY_LEFT:
+			case 37:
+				menuArea.left();
+			break;
+			case ROC_IRKEY_RIGHT:
+			case 39:
+				menuArea.right();
+			break;
+			case ROC_IRKEY_PAGE_UP:
+			case 33:
+				menuArea.pageup();
+			break;
+			case ROC_IRKEY_PAGE_DOWN:
+			case 34:
+				menuArea.pagedown();
+			break;
+			case ROC_IRKEY_SELECT:
+			case 13:
+				menuArea.href();
+			break;
+			case ROC_IRKEY_BACK:
+			case 8:
+				window.location.href="../index/index.html";
+				//window.location.href="../index/index.html";
+			break;
+			case ROC_IRKEY_EXIT:
+			case 1285:
+				window.location.href="../index/index.html";
+			break;
+		}
+}
+
+function init(){
+	
+	menuArea.init()
+}
+</script>
+</head>
+
+<body onload="init()">
+<div id="aaa" style=" position:absolute; left:400px; top:30px; z-index:9999; width:300px; height:200px"></div>
+<div class="setting_logo"></div>
+<div id="logo_text"></div>
+<div class="back_area">
+	<div class="back_logo"></div>
+	<div id="back_text"></div>
+</div>
+<div style="display:none"><img src="images/stb_bg.jpg" /></div>
+<div id="menu_area">
+	<div id="menu_video"></div>
+    <div id="menu_audio"></div>
+    <div id="menu_other"></div>
+    <div id="video_pic"></div>
+    <div id="audio_pic"></div>
+    <div id="other_pic"></div>
+</div>
+<div class="program">
+	<div id="program_list">
+    	<!--<div class="pro_list" id="list_name0">变形金刚3</div>
+		<div class="pro_list" id="list_name1">甜心巧克力</div>
+        <div class="pro_list" id="list_name2">警察故事2013</div>
+        <div class="pro_list" id="list_name3">万有引力</div>
+        <div class="pro_list" id="list_name4">我的老公不靠谱</div>
+        <div class="pro_list" id="list_name5">万有引力</div>
+        <div class="pro_list" id="list_name6">甜心巧克力</div>-->
+    </div>
+</div>
+<div id="play"></div>
+<div id="focus"></div>
+<div class="page_area">
+	<div id="page_up"></div>
+    <div id="page_down"></div>
+    <div id="page_total"></div>
+</div>
+<div id="page_focus"></div>
+<div id="tip_area">
+	<div id="tip_text"></div>
+
+</div>
+</body>
+
+
+</html>

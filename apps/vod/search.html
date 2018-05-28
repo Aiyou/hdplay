@@ -1,0 +1,627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>搜索</title>
+<link href="../../common/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/search.css"  rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../static/js/const.js"></script>
+<script type="text/javascript" src="../../static/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../../static/js/ajax2.js"></script>
+</head>
+
+<body onload="init()">
+<div class="content">
+
+  <div class="topArea"> 
+  	<img src="images/search_icon.png" />
+    <h2 id="menuTitle">搜索</h2>
+   
+  </div>
+
+
+<div id="search_area">
+	<!--<input type="text" id="input_area" readonly  value="拼音首字母搜索"  style=" overflow: scroll; "/>-->
+	 <div id="keyword">
+	 <ul>
+      <li class="mi_search">关键字：</li>
+	  <li class="mi_search_text"></li>
+    </ul>
+	</div>
+	<div class="tips">按拼音首字母搜索</div>
+	
+	
+	<div class="search_box">
+		<ul>
+				
+		</ul>
+	</div>
+		
+	<div class="search_btn">
+		<ul>
+			<li>删除</li><!--焦点 class="on" -->
+			<li>清空</li>
+		</ul>
+	</div>	
+	<div class="search_info"></div>
+	
+</div>
+
+		
+	  <div id="programList" class="program">
+			
+				<table class="content2">
+					<tbody><tr>
+					<td class="mi_border" align="center"></td>
+					<td class="mi_border" align="center"></td>
+					<td class="mi_border" align="center"></td>
+					<td class="mi_border" align="center"></td>
+					</tr>
+					<tr>
+					<td class="mi_border" align="center"></td>
+					<td class="mi_border" align="center"></td>
+					<td class="mi_border" align="center"></td>
+					<td class="mi_border" align="center"></td>
+					</tr>
+				</tbody>
+			</table>
+
+					 <div class="pageControl">
+					  <div id="page1" class="page1"></div><!--正常 class="page1" 焦点 class="page1_on"-->
+					  <div class="text" id="page">0/0 页</div>
+					  <div id="page0" class="page0"></div><!--正常 class="page0" 焦点 class="page0_on"-->
+					</div> 
+						<div id="goback">
+							 <div class="go_back">返回</div><!--正常 class="go_back" 焦点 class="go_back_on"-->
+						</div>
+			
+		  </div>
+
+ </div>
+</body>
+</html>
+<script type="text/javascript" src="../../static/js/const.js"></script>
+<script type="text/javascript" src="../../static/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+var url = MY_API_ADDR + 'get_find_list.php';
+var index = 0;
+var lastIndex = 0;
+var total = 36;
+var total_img = 8;
+var pageid = 0;
+var totalPage = 0;
+var page = g('page','');
+var mouseFlag = 'char';	//char button list page tool
+var listObjs = '#programList td';
+var charObjs = '.search_box ul li';
+var toolObjs = '.search_btn ul li';
+var pageObjs = '.pageControl div';
+var carr = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9','0');
+
+function up()
+{
+	if(mouseFlag == 'tool')
+	{
+		$(charObjs + ":eq(" + lastIndex + ")").addClass('on');
+		$(toolObjs + ".on").removeClass('on');
+		index = lastIndex;
+		mouseFlag = 'char';
+	}
+	else if(mouseFlag == 'char')
+	{
+		if(index>5)
+		{
+			$(charObjs + ".on").removeClass('on');
+			index -= 6;
+			var tmpobj = $(charObjs + ":eq("+ index +")");
+			tmpobj.addClass('on');
+			//mouseFlag = 'list';
+			//index = 0;
+		}
+		else
+		{
+			return false;
+			$(charObjs + ".on").removeClass('on');
+			index=0;
+			mouseFlag = 'search';
+			$("#search").attr('class','search_on');
+		}
+	}
+	else if(mouseFlag == 'list')
+	{
+		if(index>3)
+		{
+			$(listObjs + ".mi_focus").attr('class','mi_border');
+			index -= 4;
+			var tmpobj = $(listObjs + ":eq("+ index +")");
+			tmpobj.attr('class','mi_focus');
+		}
+		else
+		{
+			$(listObjs + ".mi_focus").attr('class','mi_border');
+			index=0;
+			mouseFlag = 'char';
+			var tmpobj = $(charObjs + ":first").addClass('on');			
+		}
+	}
+	else if(mouseFlag=='page')
+	{
+		var tmpobj = $(listObjs + ":last");
+		tmpobj.attr('class','mi_focus');
+		index = 7;
+		mouseFlag = 'list';
+	}
+}
+function down()
+{
+	if(mouseFlag == 'char')
+	{
+		if(index<=total-7)
+		{
+			$(charObjs + ".on").removeClass('on');
+			index += 6;
+			var tmpobj = $(charObjs + ":eq("+ index +")");
+			tmpobj.addClass('on');
+			//mouseFlag = 'list';
+			//index = 0;
+		}
+		else
+		{
+			$(charObjs + ".on").removeClass('on');
+			lastIndex = index;
+			index=0;
+			var tmpobj = $(toolObjs + ":first");
+			tmpobj.addClass('on');
+			mouseFlag = 'tool';
+		}
+	}
+	else if(mouseFlag == 'list')
+	{
+		if(index<4)
+		{
+			$(listObjs + ".mi_focus").attr('class','mi_border');
+			index += 4;
+			var tmpobj = $(listObjs + ":eq("+ index +")");
+			tmpobj.attr('class','mi_focus');
+		}
+		else
+		{
+			$(listObjs + ".mi_focus").attr('class','mi_border');
+			index=0;
+			var tmpobj = $(pageObjs + ":eq("+ index +")");
+			tmpobj.attr('class','page1_on');
+			mouseFlag = 'page';
+			
+		}
+	}
+	else if(mouseFlag == 'search')
+	{
+		$(charObjs + ':first').addClass('on');
+		$("#search").attr('class','search');
+		mouseFlag = 'char';
+		index =0;
+	}
+	else if(mouseFlag == 'tool')
+	{
+		$(listObjs + ":first").attr('class','mi_focus');
+		$(toolObjs + ".on").removeClass('on');
+		index = 0;
+		mouseFlag = 'list';
+	}
+}
+function setKey(str)
+{
+	//var str = getKey();
+	//$("#input_area").val(str);
+	$('.mi_search_text').html(str);
+}
+function getKey()
+{
+	//var str = $("#input_area").val();
+	var str = $(".mi_search_text").text();
+	var str = $('.mi_search_text').html();
+	if(str == '拼音首字母搜索')
+	{
+		str = '';
+	}
+	return str;
+}
+
+function left()
+{
+	if(mouseFlag == 'char')
+	{
+		if(index==0)
+		{
+			return false;
+		}
+		else
+		{
+			$(charObjs + ".on").removeClass('on');
+			index--;
+			var tmpobj = $(charObjs + ":eq("+ index +")");
+			tmpobj.addClass('on');
+		}
+	}
+	else if(mouseFlag == 'list')
+	{
+		if(index==0 || index==4)
+		{
+			$(charObjs + '.on').removeClass('on');
+			$(charObjs + ":eq(" + lastIndex + ")").addClass('on');
+			$(listObjs + ".mi_focus").attr('class','mi_border');
+			mouseFlag = 'char';
+			index = lastIndex;
+		}
+		else
+		{
+			$(listObjs + ".mi_focus").attr('class','mi_border');
+			index--;
+			var tmpobj = $(listObjs + ":eq("+ index +")");
+			tmpobj.attr('class','mi_focus');
+		}
+	}
+	else if(mouseFlag == 'tool')
+	{
+		if(index==0)
+		{
+			return false;
+		}
+		else
+		{
+			$(toolObjs + ".on").removeClass('on');
+			index--;
+			var tmpobj = $(toolObjs + ":eq("+ index +")");
+			tmpobj.addClass('on');
+		}
+	}
+	else if(mouseFlag=='page')
+	{
+		if(index==0)
+		{
+			return false;
+		}
+		else
+		{
+			$(pageObjs + ":eq(0)").attr('class','page1_on');
+			$(pageObjs + ":eq(2)").attr('class','page0');
+			index = 0;
+		}
+	}
+}
+function right()
+{
+	if(mouseFlag == 'char')
+	{
+		if(index % 6==5)
+		{
+			mouseFlag = 'list';
+			lastIndex = index;
+			index = 0;
+			$(listObjs + ":first").attr('class','mi_focus');
+			$(charObjs + ".on").removeClass('on');
+		}
+		else
+		{
+			$(charObjs + ".on").removeClass('on');
+			index++;
+			var tmpobj = $(charObjs + ":eq("+ index +")");
+			tmpobj.addClass('on');
+		}
+	}
+	else if(mouseFlag == 'list')
+	{
+		if(index==total_img-1)
+		{
+			return false;
+		}
+		else
+		{
+			var tmphtml = $(listObjs + ":eq("+(index+1)+")").html();
+			if(tmphtml=='')
+			{
+				//window.alert('no');
+				return false;
+			}
+			$(listObjs + ".mi_focus").attr('class','mi_border');
+			index++;
+			var tmpobj = $(listObjs + ":eq("+ index +")");
+			tmpobj.attr('class','mi_focus');
+		}
+	}
+	else if(mouseFlag == 'tool')
+	{
+		if(index==1)
+		{
+			return false;
+		}
+		else
+		{
+			$(toolObjs + ".on").removeClass('on');
+			index++;
+			var tmpobj = $(toolObjs + ":eq("+ index +")");
+			tmpobj.addClass('on');
+		}
+	}
+	else if(mouseFlag == 'page')
+	{
+		if(index==2)
+		{
+			return false;
+		}
+		else
+		{
+			
+			$(pageObjs + ":eq(2)").attr('class','page0_on');
+			$(pageObjs + ":eq(0)").attr('class','page1');
+			index = 2;
+			
+		}
+	}
+}
+
+function setSearchBox()
+{
+	var str = getKey();
+	
+	setKey($(charObjs + '.on').text());
+}
+function getList(pid)
+{
+	var key = getKey();
+	var tmpurl = url + '?key=' + key + '&page_id=' + pid +'&' + new Date().getTime();
+	var tmpopt = {success:function(json){showData(json);setPage(json.totalpage,pid);}};
+	Ajax.request(tmpurl,tmpopt);
+	
+}
+function select()
+{
+	//先得到节目ID
+	if(mouseFlag == 'list')
+	{
+		var id = $(listObjs + ".mi_focus img").attr('sid');
+		var idx_str = $(listObjs + ".mi_focus img").attr('idx_str');
+		var p_id = $(listObjs + ".mi_focus img").attr('p_id');
+		if(id==0)
+		{
+			return false;
+		}
+		//准备page变量的字符串 格式： search|key|pageid
+		var page_value = 'search|'+$(".mi_search_text").text() + '|' + pageid;
+		window.location.href = 'video_info.html?page='+ page_value +'&tvid=0&id=' + id;
+	}
+	else if(mouseFlag == 'char')
+	{
+		//setSearchBox();
+		var str = getKey();
+		setKey(str + $(".search_box ul li.on").text());
+		getList(1);
+		//$(".search_box ul li.on").removeClass('on');
+	}
+	else if(mouseFlag == 'search')
+	{
+		var key = $('#input_area').val();
+		var tmpurl = url + '?key=' + key + '&page_id=1&' + new Date().getTime();
+		var tmpopt = {success:function(json){showData(json);setPage(json.totalpage,1);}};
+		Ajax.request(tmpurl,tmpopt);
+		index =0;
+		$(listObjs + ':first').attr('class','mi_focus');
+		$("#search").attr('class','search');
+		return true;
+	}
+	else if(mouseFlag == 'tool')
+	{
+
+		var key = getKey();
+		var len = key.length;
+		if(index==0)
+		{
+			if(key !='')
+			{
+				key = key.substr(0,len-1);
+				setKey(key);
+				getList(1);
+				index = 0
+				if(key=='')
+				{
+					mouseFlag = 'char';
+					$(".search_box ul li.on").removeClass('on');
+					$(".search_box ul li:first").addClass('on');
+					$(".search_btn ul li.on").removeClass('on');
+				}
+				else
+				{
+					mouseFlag = 'tool';
+				}
+			}
+			else
+			{
+				$(listObjs).html('<img src="images/nopic_index.jpg"><br /><span>&nbsp;</span>');
+			}
+		}
+		else if(index==1)
+		{
+			//清空
+			setKey('');
+			$(listObjs).html('<img src="images/nopic_index.jpg"><br /><span>&nbsp;</span>');
+			setPage(0,0);
+			mouseFlag = 'char';
+			index = 0;
+			$(".search_box ul li.on").removeClass('on');
+			$(".search_box ul li:first").addClass('on');
+		}
+		
+	}
+	else if(mouseFlag == 'page')
+	{
+		if(index==0)
+		{
+			prevPage();
+		}
+		else if(index==2)
+		{
+			nextPage();
+		}
+		$(pageObjs + ":eq(2)").attr('class','page0');
+		$(pageObjs + ":eq(0)").attr('class','page1');
+		mouseFlag = 'list';
+	}
+}
+function setPage(total,cur)
+{
+	totalPage = total;
+	pageid = cur;
+	$("#page").html(cur + '/' + total +' 页');
+}
+//截取字符串(包括中文）
+ function SetString(str,len)
+ {
+	var strlen = 0; 
+	var s = "";
+	for(var i = 0;i < str.length;i++)
+	{
+	if(str.charCodeAt(i) > 128){
+	strlen += 2;
+	}else{ 
+	strlen++;
+	}
+	s += str.charAt(i);
+	if(strlen >= len){ 
+	return s ;
+	}
+	}
+	return s;
+ }
+
+function prevPage()
+{
+	var pid = pageid;
+	if(pid<2)
+	{
+		return false;
+	}
+	pid--;
+	getList(pid);
+}
+function nextPage()
+{
+	var pid = pageid;
+	if(pid>=totalPage)
+	{
+		return false;
+	}
+	pid++;
+	getList(pid);
+}
+function showData(json)
+{
+	if(json.code==0)
+	{
+		//解析得到的JSON字串 并显示
+		if(json.total >0)
+		{
+			$(listObjs).html('');		//先清空
+			var data_arr = json.data;
+			var tmptotal = data_arr.length;
+			var tmphtml = '';
+			for(var j=0;j<tmptotal;j++)
+			{
+				//<div id="tutu1"><img src="images/p2.jpg"></div>
+				//<h1 id="text1">终结者</h1>
+				tmphtml = '<img src="' + data_arr[j].v_pic + '" p_id="'+data_arr[j].v_p_id+'" sid="' + data_arr[j].id + '"><br /><span id="text1">' + SetString(data_arr[j].v_name,14) + '</span>';
+				//tmphtml = '<img width="120px" src="common/images/' + (j+1) + '.jpg" sid="' + data_arr[j].id + '"><br /><span>' + data_arr[j].v_name + '</span>';
+				$(listObjs + ":eq(" + j + ")").html(tmphtml);
+				//$(listObjs + ':first').attr('class','mi_focus');
+				//$(this.data.listObjs + ":eq(" + j + ")").append(tmphtml);
+			}
+			//this.mask.show('数据加载完毕...');
+			//mouseFlag = 'list';		//初始化光标类型
+			//index =0;
+		}
+		else
+		{
+			//表示无数据返回 说明在最后一页
+			//this.mask.show('无数据...');
+			$(listObjs).html('<img src="images/nopic_index.jpg"><br /><span>&nbsp;</span>');
+		}
+	}
+	else
+	{
+		alert('节目列表获取失败，请稍候再试');
+	}
+	//autoHide();
+	
+}
+function refresh()
+{
+	window.location.href = 'search.html';
+}
+function back()
+{
+	window.location.href = '../index/index.html';
+}
+function  init(){
+	$(listObjs).html('<img src="images/nopic_index.jpg"><br /><span>&nbsp;</span>');
+	//列出字母
+	var tmphtml = '';
+	for(var i=0;i<carr.length;i++)
+	{
+		tmphtml += '<li sid="' + i + '">'+ carr[i] +'</li>'
+				
+	}
+	$(".search_box ul").html(tmphtml);
+	$(charObjs + ':first').addClass('on');
+
+	if(page!='')
+	{
+		var str = page.split('|');
+		setKey(str[0]);
+		var tmppageid = parseInt(str[1]);
+		getList(tmppageid);
+	}
+}
+
+function grabEvent(e)
+{
+	var keycode;
+		  
+	//var tmpkey
+	keycode=e.which || e.keyCode;
+
+	switch(keycode)
+	{
+		case ROC_IRKEY_LEFT:
+			left();
+			break;
+		case ROC_IRKEY_RIGHT:
+			right();
+			break;
+		case ROC_IRKEY_SELECT:
+			select();
+			break;
+		case ROC_IRKEY_BACK:
+			back();
+			break;
+		case ROC_IRKEY_UP:
+			up();
+			break;
+		case ROC_IRKEY_DOWN:
+			down();
+			break;
+		case 1285:
+			window.location.href="../index/index.html";
+			break;
+		case ROC_IRKEY_PAGE_UP:
+				prevPage();
+				break;
+		case ROC_IRKEY_PAGE_DOWN:
+				nextPage();
+				break;
+		default :
+				return;
+	}
+	
+}
+document.onkeypress=grabEvent;
+init();
+</script>

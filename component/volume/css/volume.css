@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+/*---------volume---*/
+#Volume_Div{
+ background:url(../images/volume.png) no-repeat 0px 0px;height:61px;left:340px; position: absolute;top: 600px;width: 552px;z-index:999;opacity:1; visibility:hidden;
+}
+#volume_mute{
+	 background:url(../images/volume.png) no-repeat -74px -158px;height: 25px;left: 35px;position: absolute;top: 22px;width: 27px; visibility:hidden;
+}
+#volume {
+    background:url(../images/volume.png) no-repeat -65px -113px; height: 13px;left:67px;position: absolute;top: 30px;width: 60px;
+}
+#volume_value {
+    color: #00E1FC;font-size: 28px;left:500px;position: absolute;top: 20px; 
+}

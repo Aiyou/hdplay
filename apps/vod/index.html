@@ -1,0 +1,118 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../../common/css/style.css" rel="stylesheet" type="text/css"/>
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+<script type="text/javascript" src="../../static/js/const.js"></script>
+<script type="text/javascript" src="../../static/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../../static/js/jquery-cookie.js"></script>
+<script type="text/javascript" src="../../static/js/ajax2.js"></script>
+<script type="text/javascript" src="js/test.js"></script>
+<script type="text/javascript" src="../../static/js/ui_index.js"></script>
+<script>
+var classID = g('p_id',1);
+var url = MY_API_ADDR +'get_vod_category.php?p_id=' + classID;
+loadJS(url); 
+</script>
+
+<title>vod-index</title>
+</head>
+<body>
+<div class="content">
+  <div class="topArea"> 
+  	<img src="images/mi_cate.png" />
+    <h2 id="menuTitle"><?php echo $arr[0][$p_id];?></h2>
+    <ul class="div_toolbar">
+      <li class="mi_search" sid=0>搜索</li><!--正常 class="mi_search" 焦点 class="mi_search_on"-->
+	  <li class="mi_playlist" sid=1>播放记录</li><!--正常 class="mi_playlist" 焦点 class="mi_playlist_on"-->
+    </ul>
+  </div>
+  
+  <div class="nav" id="nav"> 
+  	
+    <h2>按地区</h2>
+    <ul id="areaList">
+ </ul>
+    <div style="clear:left;"></div>
+    <h2>按类型</h2>
+    <ul id="categoryList">
+</ul>
+    <div style="clear:left;"></div>
+    <h2>按时间</h2>
+    <ul id="yearList">
+  </ul>
+  </div>
+  
+  <div id="programList" class="program">
+    
+    <table class="content2">
+		<tbody><tr>
+		<td class="mi_border"></td>
+		<td class="mi_border"></td>
+		<td class="mi_border"></td>
+		<td class="mi_border"></td>
+		<td class="mi_border"></td>
+		</tr>
+		<tr>
+		<td class="mi_border"></td>
+		<td class="mi_border"></td>
+		<td class="mi_border"></td>
+		<td class="mi_border"></td>
+		<td class="mi_border"></td>
+		</tr>
+	</tbody>
+</table>
+     <div class="pageControl">
+      <div id="page1" class="page1" sid="up">上页</div><!--正常 class="page1" 焦点 class="page1_on"-->
+      <div class="text" id="page">1/0 页</div>
+      <div id="page0" class="page0" sid="down">下页</div><!--正常 class="page0" 焦点 class="page0_on"-->
+    </div> 
+		<div id="goback">
+			 <div class="go_back">返回</div><!--正常 class="go_back" 焦点 class="go_back_on"-->
+		</div>
+	
+  </div>
+</div>
+<div id="div_mask" style="position:absolute;display:none"></div>
+<div id="programFocus"></div>
+<div id="div_box" style="position:absolute;display:none;z-index:98;width:186px;height:241px;background:url('images/mi_light.png')">
+</div>
+</body>
+</html>
+<script>
+
+var idxStr = g('idx_str','0,0,0');
+var pageID = g('pageid',1);
+var index = g('index',-1);
+o('menuTitle').innerHTML = categoryName;
+//http://192.168.1.101/apps/vod/index.html?p_id=4
+//var tmpClassArr = [];
+//alert(tmpClassArr.length);
+
+$(function(){
+	
+	
+	indexObj.init({
+		title	: '节目列表',
+		url		: MY_API_ADDR + 'get_vod_list.php',
+		classArr: tmpClassArr,
+		classID	: classID,
+		idxStr	: idxStr,
+		pageID	: pageID,
+		index	: index,
+		gourl	: 'video_info.html',
+		areaObjs: '#areaList li', 
+		classObjs: '#categoryList li', 
+		yearObjs: '#yearList li', 
+		menuObjs: '#nav li', 
+		toolObjs: '.div_toolbar li', 
+		listObjs: '.content2 td', 
+		pageObjs: '.pageControl >div',
+		cacheObj: '#programList',
+	});
+	
+});
+
+</script>

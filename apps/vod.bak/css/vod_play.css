@@ -1,0 +1,400 @@
+body {
+    color:#FFF;
+    font-family: '微软雅黑';
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+/*	background:url(../images/playbg.jpg);
+*/}
+ul,li{
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+#playpanel {
+    background: url("../images/play_icon.png") repeat scroll -7px 112px transparent;
+    height: 102px;
+    left: 300px;
+    opacity: 1;
+    position: absolute;
+    top: 542px;
+    width: 727px;
+    z-index: 2;
+}
+
+#jumpdiv {
+	height: 70px;
+	left: 90px;
+	position: absolute;
+	top: -44px;
+	width: 75px;
+	z-index: 3;
+	text-align:center;
+/*	background:url("../images/play_icon.png") no-repeat scroll -17px -76px transparent
+*/}
+#jumptime {
+    color: #000;
+    font-size: 20px;
+    line-height: 25px;
+	height:25px;
+	overflow:hidden;
+    position: absolute;
+    left: 3px;
+    top: 5px;
+    width: 100%;
+    z-index: 4;
+}
+#jumptime input{
+	border:0px;
+	padding:0px;
+	padding-top:5px;
+	margin:0px;
+	height:20px;
+	width:20px;
+}
+
+#jumptime span{
+	font-size:15px;
+	width:3px;
+	height:8px;
+	padding:0px;
+	position:absolute;
+	top:3px;
+	left:21px;
+}
+#jumptime .span2{
+	left:47px;
+}
+#dot{
+	height: 28px;
+	left: 28px;
+	position: absolute;
+	top: 50px;
+	width: 20px;
+}
+.dot_off {
+    background: url("../images/play_icon.png") repeat scroll -155px -69px transparent;
+}
+.dot_on {
+    background: url("../images/play_icon.png") repeat scroll -191px -69px transparent;
+}
+#progress {
+    background:#32b3e6;
+    height: 4px;
+    left: 131px;
+    position: absolute;
+    top: 21px;
+    width: 0px;
+    z-index: 2;
+}
+
+#curtime, #endtime {
+    font-size: 19px;
+    height: 20px;
+    position: absolute;
+    top: 14px;
+    width: 85px;
+}
+#curtime {
+    left: 30px;
+}
+#endtime {
+    left: 613px;
+}
+#curtime1{
+	font-size: 19px;
+    height: 20px;
+    position: absolute;
+    top: 19px;
+	left: 164px;
+    width: 85px;
+}
+.prognameTip{
+	color: #ff9900;
+	font-size: 18px;
+	line-height: 33px;
+	text-align: left;
+	position: absolute;
+	left: 614px;
+	top: 60px;
+	width: 80px;
+}
+#progname {
+	color: #ff9900;
+	font-size: 18px;
+	line-height: 33px;
+	text-align: left;
+	position: absolute;
+	left: 30px;
+	top: 60px;
+	width: 320px;
+}
+
+#state{
+	position: absolute;
+	top: 55px;
+	left: 353px;
+	width: 30px;
+	height: 30px;
+
+}
+#fastForward,#fastRewind{
+    height: 30px;
+    position: absolute;
+    top: 40px;
+    width: 30px;
+	/*新设计中没有快进快退图片，暂时隐藏*/
+	visibility:hidden;
+}
+#fastForward{
+    left: 380px;
+}
+#fastRewind{
+    left: 510px;
+}
+.play_off{
+    background: url("../images/play_icon.png") repeat scroll -55px -3px ;
+}
+.play_on{
+    background: url("../images/play_icon.png") repeat scroll -55px -35px ;
+	}
+.pause_off{
+    background: url("../images/play_icon.png") repeat scroll -16px -3px ;
+}
+.pause_on{
+    background: url("../images/play_icon.png") repeat scroll -16px -35px  ;
+	}
+.fastForward_off{   
+	background: url("../images/play_icon.png") repeat scroll -342px -139px transparent;
+}
+.fastForward_on{
+    background: url("../images/play_icon.png") repeat scroll -342px -41px transparent;
+}
+.fastRewind_off{
+    background: url("../images/play_icon.png") repeat scroll -265px -139px transparent;
+}
+.fastRewind_on{
+    background: url("../images/play_icon.png") repeat scroll -265px -41px transparent;
+}
+
+#speed{
+	width:200px;
+	height:130px;
+	position:absolute;
+	left:720px;
+	top:-139px;
+}
+.speed4{
+	background: url("../images/vodplay.png") -456px -278px;
+}
+.speed8{
+	background: url("../images/vodplay.png") -656px -278px;
+}
+.speed16{
+	background: url("../images/vodplay.png") -856px -278px;
+}
+.speed32{
+	background: url("../images/vodplay.png") -1056px -278px;
+}
+.speednone{
+/*	background:;
+*/}
+
+.jump_f {
+	border:1px solid #F00;
+
+}
+.jump_b {
+	border:0px solid #F00;
+
+}
+
+#smallwin {
+    background: url("../images/vodplay.png") repeat scroll -16px -256px transparent;
+    color: #00fff6;
+    font-size: 30px;
+    height: 250px;
+    left: 410px;
+    opacity: 1;
+    position: absolute;
+    top: 210px;
+    width: 430px;
+}
+.button0_on {
+	background: url("../images/vodplay.png") repeat scroll -868px -128px transparent;
+	}
+.button1_on {
+	background: url("../images/vodplay.png") repeat scroll -868px -54px transparent;
+	}
+.button0_off {
+    background: url("../images/vodplay.png") repeat scroll -1053px -54px transparent;
+}
+.button1_off {
+    background: url("../images/vodplay.png") repeat scroll -1053px -128px transparent;
+}
+#button0,#button1 {	
+	height: 58px;
+	padding-top: 12px;
+	position: absolute;
+	text-align: center;
+	top: 127px;
+	width: 177px;
+}
+#button0 {	
+	left: 32px;
+}
+#button1 {	
+	left: 218px;
+}
+#content {
+    font-size: 30px;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 53px;
+    width: 100%;
+}
+.playpause{
+	position:absolute; right:30px; bottom:20px; visibility:hidden; font-size:22px;
+}
+
+/*---------volume---*/
+#Volume_Div{
+ background:url(../images/volume.png) no-repeat 0px 0px;height: 83px;left: 397px; position: absolute;top: 550px;width: 531px;z-index:999;opacity:1;visibility:hidden ;
+}
+#volume_mute{
+	 background:url(../images/volume.png) no-repeat -72px -158px;height: 25px;left: 25px;position: absolute;top: 25px;width: 27px; visibility:hidden;
+}
+#volume {
+    background:url(../images/volume.png) no-repeat -59px -114px; height: 12px;left:58px;position: absolute;top: 32px;width:0px;
+}
+#volume_value {
+    color: #00E1FC;font-size: 28px;left: 490px;position: absolute;top: 24px;
+}
+
+/*vod书签*/
+/*#wid_exitc {
+	opacity: 1;
+	width: 563px;
+	height: 241px;
+	position: absolute;
+	left: 361px;
+	top: 229px;
+	background: url("../images/fw_exitconfirm.png") no-repeat 0px 0px transparent;
+	z-index: 998;
+	overflow: hidden;
+}
+#wid_exitc p {
+	width: 470px;
+	margin: 28px 0 0 26px;
+	font-size: 30px;
+	color: #00fff6;
+	text-align: center;
+}
+#wid_exitc p.title{
+	margin-top: 10px;
+	font-size: 32px;
+}
+#wid_exitc em{
+	display: block;
+	height: 54px;
+	background: url("../images/fw_exitconfirm.png") no-repeat;
+}
+#wid_exitc .point{
+	width: 169px;
+	position: absolute;
+	left: 315px;
+	top: 143px;
+}
+#wid_exitc .point em{
+	background-position: -318px -386px;
+}
+#wid_exitc .point .focus{
+	background-position: -318px -286px;
+}
+#wid_exitc .cancel{
+	width: 141px;
+	position: absolute;
+	left: 155px;
+	top: 143px;
+}
+#wid_exitc .cancel em{
+	background-position: -157px -386px;
+}
+#wid_exitc .cancel .focus{
+	background-position: -157px -286px;
+}
+#wid_exitc .exit{
+	width: 97px;
+	position: absolute;
+	left: 40px;
+	top: 143px;
+}
+#wid_exitc .exit em{
+	background-position: -40px -386px;
+}
+#wid_exitc .exit .focus{
+	background-position: -40px -286px;
+}
+*/
+
+/*子集*/
+.subList{
+	position: absolute;
+	left: 299px;
+/*	top:100px;
+*/	top: 539px;
+	width: 726px;
+	height: 102px;
+	background: #000;
+	border: 1px solid #666;
+	opacity:1;
+}
+.subList ul{
+	width:540px;
+	height:100px;
+	margin-left:90px;
+}
+.subList li{
+	text-align:center;
+	line-height:48px;
+	width:52px;
+	height:48px;
+	float:left;
+	border:1px solid #fff;
+}
+.subList .curLi{
+	border:1px solid #FF0;
+	color:#FF0;
+}
+.videoType{
+	position:absolute;
+	left:800px;
+	top:539px;
+	width:100px;
+	height:140px;
+	background:url(../images/mi_icon.png) -227px -247px;
+	opacity:1;
+}
+.videoType li{
+	padding-top:2px;
+	width:100px;
+	line-height:42px;
+	height:42px;
+	text-align:center;
+	z-index:999;
+}
+.videoType ul{
+	
+}
+#curLi{
+	background:url(../images/mi_icon.png) -121px -343px;
+	width:100px; 
+	height:42px;
+	position:absolute;
+	top:539px; 
+	left:800px; 
+	z-index:10;
+	visibility:hidden;
+}

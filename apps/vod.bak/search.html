@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>搜索</title>
+<link href="../../common/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/search.css"  rel="stylesheet" type="text/css" />
+<script src="../../common/js/global.js"></script>
+<script src="../../common/js/ovt.js"></script>
+<script src="js/search.js" ></script>
+<script type="text/javascript">
+document.onkeypress = grabEvent;
+function grabEvent(event){
+	var val = event.which | event.keyCode;
+	switch(val){
+		case ROC_IRKEY_UP:
+		case 38:
+			if(AreaIndex == 1){
+				buttonArea.up();
+			}else{
+				proListArea.up();
+			}		
+		break;
+		case ROC_IRKEY_DOWN:
+		case 40:
+			if(AreaIndex == 1){
+				buttonArea.down();
+			}else{
+				proListArea.down();
+			}
+			
+		break;
+		case ROC_IRKEY_LEFT:
+		case 37:
+			if(AreaIndex == 1){
+				buttonArea.left();
+			}else{
+			}
+		break;
+		case ROC_IRKEY_RIGHT:
+		case 39:
+			if(AreaIndex == 1){
+				buttonArea.right();
+			}else{
+			}
+		break;
+		case ROC_IRKEY_PAGE_UP:
+		case 33:
+			//channelArea.pageup();
+		break;
+		case ROC_IRKEY_PAGE_DOWN:
+		case 34:
+			//channelArea.pagedown();
+		break;
+		case ROC_IRKEY_SELECT:
+		case 13:
+			if(AreaIndex == 2){
+				proListArea.href();
+			}else{
+				buttonArea.href();
+			}
+		break;
+		case ROC_IRKEY_BACK:
+		case 8:
+			if( ( AreaIndex == 1 ) &&(buttonArea.index == 0 ) &&( $( "input_area").value != "" ) ) {
+				break;
+			}
+		   	else if( ( $("input_area").value == "" )||(AreaIndex == 2) ||(( AreaIndex == 1 ) &&(buttonArea.index == 1 ) )){
+				//window.location.href="vod_index.html";
+				goBack();
+				return false;
+				break;
+			}
+			//window.location.href="../index/index.html"
+		break;
+		case ROC_IRKEY_EXIT:
+		case 1285:
+			window.location.href="../index/index.html";
+		break;
+	}
+		
+}
+
+</script>
+</head>
+
+<body onload="init()">
+<div id="search_area">
+	<input type="text" id="input_area"  value=""  style=" overflow: scroll; "/>
+    <div id="search"></div>
+</div>
+<div class="result_area">
+	<div class="result_show" id="result_show">
+<!--    	<div class="list_result" id="list_pad0" style="color:black;">我爱玛丽</div>
+        <div class="list_result" id="list_pad1">天赐我爱</div>
+        <div class="list_result" id="list_pad2">曹云金相声专场：我爱体育</div>
+        <div class="list_result" id="list_pad3">我爱HK开心万岁 预告片</div>
+        <div class="list_result" id="list_pad4">我爱麻烦 预告片</div>
+        <div class="list_result" id="list_pad5">幼儿园儿童歌曲集：我爱北京天安门</div>
+    	<div class="list_result" id="list_pad6">我爱玛丽</div>
+        <div class="list_result" id="list_pad7">天赐我爱</div>-->
+    </div>
+
+</div>
+<div id="result_focus"></div>
+<div id="page" ></div>
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+#powerwin,.sysTip {
+	background: url("../images/powerTip.png") no-repeat 0px -147px transparent; 
+	color: #ffffff;
+    font-size: 30px;
+    height: 250px;
+    left: 410px;
+    opacity: 1;
+    position: absolute;
+    top: 230px;
+    width: 430px;
+	z-index:999;
+}
+#errortip{
+    font-size: 25px;
+    height: 50px;
+    position: absolute;
+  	left:32px;
+	top: 73px;
+    text-align: center;
+    width: 360px;
+	
+}
+.powerbutton0_on {
+	background: url("../images/powerTip.png") no-repeat 0px -73px transparent;
+	color:#000;
+	}
+.powerbutton1_on {
+	background: url("../images/powerTip.png") no-repeat 0px 1px transparent;
+	color:#fff;
+	}
+.powerbutton0_off {
+    background: url("../images/powerTip.png") no-repeat -185px 1px transparent;
+	color:#000;
+}
+.powerbutton1_off {
+    background: url("../images/powerTip.png") no-repeat -185px -73px transparent;
+	color:#fff;
+}
+#powerbutton0,#powerbutton1 {	
+	height: 58px;
+	padding-top: 12px;
+	position: absolute;
+	text-align: center;
+	top: 107px;
+	width: 168px;
+}
+#powerbutton0 {	
+	left: 32px;
+}
+#powerbutton1 {	
+	left: 218px;
+}
+#powertip {
+    font-size: 28px;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 36px;
+    width: 100%;
+}

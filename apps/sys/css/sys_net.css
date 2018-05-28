@@ -1,0 +1,212 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	padding:0;margin:0;font-family:"Microsoft YaHei" !important;
+}
+body {
+	margin:0;padding:0;color:#FFF;border:0px; width:1280px; height:720px;background:url(../images/sys_bg.jpg) no-repeat;
+}
+img {
+	border:0;
+}
+#net_logo{
+	position:absolute; top:14px; left:80px; height:57px; width:300px; background:url(../images/ico_net.png) no-repeat; padding-left:56px; font-size:28px; font-family:"SimHei"; line-height:47px; vertical-align:middle; padding-top:10px;
+}
+#net_box{
+	position:absolute; left:50px; top:120px; height:auto; width:245px; z-index:2; 
+}
+#net_0,#net_1,#net_2,#net_3,#net_4{
+	position:relative; width:230px; height:83px; text-align:right; font-size:30px; letter-spacing:1px; vertical-align:middle; line-height:83px; font-family:"SimHei";
+}
+#net_box .focus{
+	font-size:30px; color:#30FF00;
+}
+#content_0{
+	position:absolute; 
+	left:375px;
+	top:135px;
+	width:388px;
+	height:180px;
+	font-size:21px; z-index:1px;
+}
+#auto_search_btn{
+	width:212px; height:60px; background:url(../images/auto_blur_bg.png) no-repeat; text-align:center; height:60px; line-height:60px; vertical-align:middle; font-size:22px;font-family:"SimHei"; 
+}
+
+#auto_search_btn .focus{
+	background:url(../images/auto_focus_bg.png) no-repeat;
+}
+#wired_ip,#type_ip,#wired_mask,#wired_gateway,#wired_dns{
+	width:420px; height:60px;line-height:60px; text-align:left; vertical-align:middle; padding-left:10px;
+}
+.auto_tip_name{
+	width:120px; height:60px; display:inline-block; line-height:60px; vertical-align:middle; text-align:left; 
+}
+.auto_tip_content{
+	width:280px; height:60px; display:inline-block; line-height:60px; vertical-align:middle; text-align:left; color:#999;
+}
+#wire_show{
+	width:450px; height:40px;line-height:40px; text-align:left; vertical-align:middle; padding-left:10px; visibility:hidden; color:#FFFF00;
+}
+#content_2,#content_wiredless{
+	position:absolute; 
+	left:375px;
+	top:145px;
+	width:409px;
+	height:273px;
+	font-size:21px; 
+}
+#login_name,#login_pw,#wiredless_login_pw,#ip_addr_c,#net_mask_c,#gateway_c,#dns_c{ 
+	display: block;
+	width: 280px;
+	height: 35px;
+	margin: 0;
+	/*border: none;*/
+	outline: none;
+	font-size: 20px;
+	color:#fff; text-align:left; margin-left:5px;  line-height:35px;vertical-align:middle; padding-left:1px;
+	/*background:url(../images/text_bg.png) no-repeat; */ background:#222;
+}
+.keyInputFocus{
+	border:solid 1px #30FF00;
+}
+.info_title_first{
+	height:67px; width:400px; font-size:25px; text-align:left;font-family:"SimHei";
+}
+.info_title{
+	width:115px; height:60px;line-height:60px; text-align:left; vertical-align:middle;
+}
+#pppoe_link,#pppoe_cancel,#static_link,#static_cancel,#wiredless_link,#wiredless_cancel{
+ 	height:45px; text-align:center;padding-top:10px; background:url(../images/btn_blur.png) no-repeat 0px 0px; width:156px; display:inline-block; color:#fff; font-size:22px;font-family:"SimHei";
+}
+#pppoe_save_tip,#static_save_tip,#wiredless_search_tip,#wiredless_save_tip{
+	height:60px; width:400px; font-size:26px; text-align:center; color:#FFFF00; visibility:hidden; text-align:center; line-height:60px; vertical-align:middle;font-family:"SimHei";
+}
+#wiredless_search_tip{
+	height:25px; padding-top:15px;
+}
+#content_3{
+	position:absolute; 
+	left:375px;
+	top:145px;
+	width:425px;
+	height:412px;
+	font-size:21px; 
+}
+.info_title_static{
+	width:115px; height:46px;line-height:46px; text-align:right; vertical-align:middle; padding-bottom:7px; padding-right:13px; padding-top:7px;
+}
+.content_static{
+	width:315px; height:43px;padding-bottom:14px; background:url(../images/static_ip_bg1.png) no-repeat; padding-left:3px; padding-top:3px;
+}
+/*#ip_addr_c,#net_mask_c,#gateway_c,#dns_c{ 
+	display: inline-block;
+	width: 63px;
+	height: 37px;
+	margin: 0;
+	border: none;
+	outline: none;
+	font-size: 22px;
+	color:#000; text-align:center;line-height:37px;vertical-align:middle; padding-left:2px;
+	
+}*/
+
+#content_1{
+	position:absolute; 
+	left:355px;
+	top:145px;
+	width:517px;
+	height:360px;
+	font-size:21px; 
+}
+.info_wiredless_title{
+	height:54px; width:368px; font-size:25px; text-align:left;	padding-left:20px;font-family:"SimHei";
+}
+#wiredLess_search_btn{
+	height:54px; width:73px; background:url(../images/search_btn_blur.png) no-repeat; font-size:21px; font-family:"SimHei"; padding-left:8px; line-height:50px; vertical-align:middle;
+}
+
+#wifi_lists{
+	height:300px;width:517px; text-align:left; font-size:22px;
+}
+.wifi_focus{
+	 background:url(../images/wifi_focus.png) no-repeat ; 
+}
+#wifi_lists ul{
+	height:auto;width:517px;vertical-align:middle;list-style-type:none; 
+}
+#wifi_lists ul li{
+	list-style-type:none;height:60px;	padding-left:20px;width:497px;
+}
+#wifi_lists ul li div{
+	float:left;
+}
+#wifi_lists ul li .wifi_name{
+	width:368px; height:60px;line-height:60px; vertical-align:middle;
+}
+#wifi_lists ul li .wifi_ico_5{
+	width:129px; height:60px;
+	background:url(../images/wifi_bg.png) no-repeat 18px 25px;
+}
+#wifi_lists ul li .wifi_ico_4{
+	width:129px; height:60px;
+	background:url(../images/wifi_bg.png) no-repeat 18px -32px;  
+}
+#wifi_lists ul li .wifi_ico_3{
+	width:129px; height:60px;
+	background:url(../images/wifi_bg.png) no-repeat 18px -91px;
+}
+#wifi_lists ul li .wifi_ico_2{
+	width:129px; height:60px;
+	background:url(../images/wifi_bg.png) no-repeat 18px -152px;
+}
+#wifi_lists ul li .wifi_ico_1{
+	width:129px; height:60px;
+	background:url(../images/wifi_bg.png) no-repeat 18px -211px;
+}
+#wifi_lists ul li .wifi_r_ico_5{
+	width:129px; height:60px;
+	background:url(../images/wifi_bg.png) no-repeat -111px 25px;
+}
+#wifi_lists ul li .wifi_r_ico_4{
+	width:129px; height:60px;
+	background:url(../images/wifi_bg.png) no-repeat -111px -32px;  
+}
+#wifi_lists ul li .wifi_r_ico_3{
+	width:129px; height:60px;
+	background:url(../images/wifi_bg.png) no-repeat -111px -91px;
+}
+#wifi_lists ul li .wifi_r_ico_2{
+	width:129px; height:60px;
+	background:url(../images/wifi_bg.png) no-repeat -111px -152px;
+}
+#wifi_lists ul li .wifi_r_ico_1{
+	width:129px; height:60px;
+	background:url(../images/wifi_bg.png) no-repeat -111px -211px;
+}
+#buffer{
+	position:absolute; left:425px; top:245px; height:190px; width:456px;  visibility:hidden; z-index:3; background:url(../images/buffer.png) no-repeat; font-size:22px;
+}
+#buffer_content{
+ 	height:35px; font-size:25px; 
+	padding-left: 75px;
+    padding-top: 105px;
+    width: 285px; text-align:center;
+}
+#back_tiper{
+	position:absolute; top:30px; left:1103px; width:110px; height:25px; background:url(../images/back.png) no-repeat; padding-left:40px; font-size:20px; 
+	padding-top:4px;
+}
+/*输入框加个标志*/
+.InputFocus{
+	border:solid 3px #f8cc02;
+/*	background:#fff!important;
+	color:#000!important;*/
+}
+/*输入框加个标志*/
+.InputBlur{
+	border:none;
+	background:#333!important;
+}
+
+

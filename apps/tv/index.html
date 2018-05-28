@@ -1,0 +1,67 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>频道列表</title>
+<script type="text/javascript" src="../../static/js/const.js"></script>
+<script type="text/javascript" src="../../static/js/ajax2.js"></script>
+<script type="text/javascript" src="../../static/js/ui_tv_filmon2.js"></script>
+<script type="text/javascript" src="../../static/js/ui_tv_f.js"></script>
+<link href="css/tv_filmon.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="opacity:0;">
+<div id="debug" style="color:#FFFFFF;display:none" >debug</div>  
+<!-- 全部频道-->
+<div id="ch_bg" style="opacity:1;display:none;">
+    <div id="ch_menu">
+          <ul id="div_menu">
+			  <!--li sid='$id' programid='$programID' idx='$idx'>$class</li-->
+          </ul>
+    </div>
+
+</div>
+
+<div id="ch_detail" style="display:none;">
+    <div id="ch_lists">
+			<ul id="div_lists">
+                
+           </ul>  
+		
+    </div>
+
+</div>
+
+<!--当前节目的信息栏-->
+<div id="content" style="display:none;opacity:1">
+    	<div id="channel_focus"><span class="channel_id" id="spanChannelID"></span><span class="channel_name" id="spanChannelName"></span></div>
+        <div id="channel_lists">
+            <ul>
+            	<li><span class="time_up"></span> <span class="list_name1"></span></li>
+            	<li><span class="time_down"></span> <span class="list_name2"></span></li>
+            </ul>
+        </div>
+		<div id="date">
+			<ul>
+            	<li><span class="time" id="spanTime"></span></li>
+            	<li><span class="week" id="spanWeek"></span>&nbsp;&nbsp;<span class="date" id="spanDate"></span></li>
+            </ul>
+		</div>
+    </div>
+<!--volumestare -->
+<div id="Volume_Div" style="display:none;opacity:1">
+  <div id="volume_mute" style="display:none"></div>
+  <div id="volume"></div>
+  <div id="volume_value"></div>
+</div>
+</body>
+</html>
+<div id="loading" style="z-index:10000;color:#FFFFFF; background-image:url(images/loading.gif); position:fixed; left:590px; top:310px; width:100px; height:100px;"></div>
+<div id="div_msg" style="opacity:1;color:#ff0000;display:none">
+</div>
+<div id="up_arrow" style="display:none"></div>
+<div id="down_arrow" style="display:none"></div>
+<script>
+FO_start();
+</script>

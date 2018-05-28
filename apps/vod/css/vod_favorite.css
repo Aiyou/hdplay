@@ -1,0 +1,209 @@
+@charset "utf-8";
+*{
+	padding:0px;
+	margin:0px;	
+	color:#FFF;	
+}
+ul,li{
+	list-style:none;
+}
+img{
+	border:0px;
+}
+h2{
+	color:#FFF;
+	font-size:30px;
+	position:absolute;
+	left:120px;
+	top:50px;
+}
+/*content*/
+.content{
+	position:relative;
+	margin:0px auto;
+	width:1280px;
+	height:720px;
+	overflow:hidden;
+	background:url(../images/mi_detai.jpg);
+}
+.top{ position:absolute; left:1035px; top:24px; height:37px; width:200px; font-size:28px; color:#6b6161;}
+/*topArea*/
+/*topArea*/
+.topArea{
+	width:100%;
+	height:50px;
+}
+.topArea img{
+	position:absolute;
+	left:51px;
+	top:32px;
+}
+.topArea h2{
+	position:absolute;
+	left:86px;
+	top:31px;
+	font-size:27px;
+	font-weight:700;
+	font-family:"黑体" !important;
+	color:#efefef;
+
+}
+.topArea ul{
+	position:absolute;
+	left:1110px;
+	top:31px;
+}
+.topArea li{
+	float:left;
+	margin-right:20px;
+	width:auto;
+	font-size:20px;
+	color:#CCC;
+	font-family:"Microsoft YaHei" !important;
+}
+.mi_back{
+font-size:20px;
+color:#d3d3d3;padding-left:40px;height:41px;line-height:41px;
+background:url(../images/mi_botton.png) 0px 0px no-repeat ;
+font-family:"Microsoft YaHei" !important;
+}
+.mi_back_on{
+font-size:20px;
+color:#fff;padding-left:40px;height:41px;line-height:41px;
+background:url(../images/mi_botton.png) -152px 0px no-repeat;
+font-family:"Microsoft YaHei" !important;
+}
+
+
+/*program*/
+.program{
+	width:1180px;
+	height:auto;
+	position:absolute;
+	top:100px;
+	left:50px;
+}
+.program #programFocus{
+	background:url(../images/mi_light.png) no-repeat;
+	width:188px;
+	height:252px;
+	position:absolute;
+	left:21px;
+	top:-10px;
+
+	z-index:1;
+}
+.program .content2,.program .content3{
+	width:1180px;
+	height:550px;
+	z-index:99;
+}
+.program .content3{
+	margin-top:0px;
+}
+
+.content2 td{
+	text-align:center;
+	height:275px;
+	width:195px;
+}
+.content2  td.mi_border{
+
+width:192px;
+height:281px;
+background:url(../images/mi_line1.png) no-repeat center top;
+}
+.content2 td.mi_focus{
+background:url(../images/mi_light.png) no-repeat center top;
+
+width:192px;
+height:281px;
+}
+
+.content2 td img{
+	/*border:2px solid #666;*/
+	width:162px;
+	height:216px;
+	background:url(../images/nopic_index_on.jpg) 25% 50% ;
+
+}
+.content2 tr td span{
+	font-size:20px;
+
+	font-family:"Microsoft YaHei" !important;
+	color:#eaeaea;
+	line-height:53px;
+	height:42px;display:block
+	
+}
+
+
+
+
+
+
+/*当前节目的焦点状态*/
+.program .curProgram h1{
+	font-size:23px;
+	color:#FFF;
+}
+.program .curProgram img{
+	width:139px;
+	height:206px;
+	margin-top:0px;
+	border:0px;
+}
+.mepg {
+	display:block;
+	background:url(../images/nopic_index_on.jpg);
+	width:139px;
+	height:206px;
+}
+
+.pageControl{
+	position:absolute;
+	clear:both;
+	width:278px;
+	left:265px;
+	bottom:-45px;
+}
+.pageControl #page0,.pageControl #page1,.pageControl .text{
+	width:114px;
+	height:40px;
+	line-height:40px;
+	font-weight:bold;
+	float:left;
+}
+.pageControl .text{
+	width:50px;
+	color:#00ccff;
+}
+.pageControl .show{
+	background:url(../images/icon.png) -9px -10px no-repeat;
+	color:#000000;
+}
+.pageControl .hide{
+	background:url(../images/icon.png) -173px -10px no-repeat;
+	color:#fff;
+}
+
+/*small_button*/
+#small_button{
+	position:absolute;
+	left:900px;
+	top:95px;
+	width:auto;	
+}
+#small_button li{
+	float:left;
+	width:60px;
+	line-height:40px;
+	display:block;
+	text-align:center;
+	font-weight:bold;
+	color:#999;
+}
+#small_button .onfocus{
+	font-size:24px;
+	color:#00ffff;
+}

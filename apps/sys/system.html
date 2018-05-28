@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>net settings</title>
+<link href="../../common/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/sys_net.css" rel="stylesheet" type="text/css" />
+<link href="css/keyboard.css" rel="stylesheet" type="text/css" />
+<script src="../../common/js/ovt.js"></script>
+<script src="../../common/js/global.js"></script>
+<script src="js/config.js"></script>
+<script src="js/keyboard.js"></script>
+<script src="js/sysnet.js"></script>
+
+
+</head>
+
+<body onload="initpage();">
+<!--<div style="position:absolute; top:50px; left:60px; color:#F00; height:20px; width:580px; z-index:999;opacity:1;" id="test"></div>-->
+<div id="net_logo"></div>
+<div style="display:none"><img src="images/sys_bg.jpg" /></div>
+<div id="net_box">
+	<div id="net_0"></div>
+    <div id="net_1"></div>
+    <div id="net_2"></div>
+    <div id="net_3"></div>
+</div>
+
+<div id="content_0" style="visibility:visible;">
+	<div  id="auto_search_btn"></div>
+    <div id="wire_show"></div>
+    <div id = "type_ip"><span class="auto_tip_name"></span><span class="auto_tip_content"></span></div>
+    <div id = "wired_ip"><span class="auto_tip_name"></span><span class="auto_tip_content"></span></div>
+    <div id = "wired_mask"><span class="auto_tip_name"></span><span class="auto_tip_content"></span></div>
+    <div id = "wired_gateway"><span class="auto_tip_name"></span><span class="auto_tip_content"></span></div>
+    <div id = "wired_dns"><span class="auto_tip_name"></span><span class="auto_tip_content"></span></div>
+</div>
+<div id="content_1" style="visibility:hidden;">
+      <table width="517" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="388" height="54" ><div class="info_wiredless_title" id="wifi_setting_name"></div></td>
+              <td  width="129"> <div id = "wiredLess_search_btn"></div></td>
+            </tr>
+             <tr>
+              <td  height="40" colspan="2"><div id = "wiredless_search_tip"></div></td>
+            </tr>
+            <tr>
+              <td  height="300" colspan="2">
+              	<div id= "wifi_lists">
+<!--                	<ul>
+                    	<li><div id = "wifi_name">ew qw rqew q</div><div id = "wifi_ico" ></div></li>
+                        <li><div id = "wifi_name">ew qw rqew q</div><div id = "wifi_ico" ></div></li>
+                        <li><div id = "wifi_name">ew qw rqew q</div><div id = "wifi_ico" ></div></li>
+                        <li><div id = "wifi_name">ew qw rqew q</div><div id = "wifi_ico" ></div></li>
+                        <li><div id = "wifi_name">ew qw rqew q</div><div id = "wifi_ico" ></div></li>
+                    </ul>-->
+                </div>
+              </td>
+            </tr>
+      </table>
+      
+</div>
+<div id ="buffer"><div id = "buffer_content"></div></div>
+<div id="content_2" style="visibility:hidden;">
+	  <table width="409" border="0" cellspacing="5" cellpadding="0">
+    <tr>
+      <td  height="67" colspan="2"><div class="info_title_first" id="pppoe_title_name"></div></td>
+    </tr>
+    <tr>
+      <td  width="115" height="60" ><div class="info_title" id="pppoe_name"></div></td>
+     <!-- <td  width="293"  ><div><input type="text" id="login_name" style=" overflow:scroll;" value=""/></div></td>-->
+       <td  width="293"  ><div id="login_name" style=" overflow:scroll;"></div></td>
+    </tr>
+    <tr>
+      <td width="115" height="60" ><div class="info_title" id="pppoe_pwd"></div></td>
+     <!-- <td width="293" ><div><input type="text" id="login_pw" style=" overflow:scroll;" value=""  /></div></td>-->
+      <td width="293" ><div id="login_pw" style=" overflow:scroll;"></div></td>
+    </tr>
+    <tr>
+        <td  height="30" colspan="2"></td>
+    </tr>
+    <tr style="background:none;">
+       <td height="58" colspan="2" style="padding:0px 32px 0px 49px;"><span id="pppoe_link" ></span><span id="pppoe_cancel" ></span></td>
+    </tr>
+    <tr>
+        <td  height="50" colspan="2"><div id = "pppoe_save_tip"></div></td>
+    </tr>
+  </table>
+</div>
+<div id="content_3" style="visibility:hidden;">
+  <table width="409" border="0" cellspacing="5" cellpadding="0">
+    <tr>
+      <td  height="67" colspan="2"><div class="info_title_first" id="static_name"></div></td>
+    </tr>
+    <tr>
+      <td  width="115" height="60" ><div class="info_title_static" id="static_ip_name"></div></td>
+     <!-- <td  width="293"  ><div ><input type="text" id="ip_addr_c"  style=" overflow:scroll;" value=""/></div></td>-->
+      <td  width="293"  ><div id="ip_addr_c"  style=" overflow:scroll;"></div></td>
+    </tr>
+    <tr>
+      <td width="115" height="60" ><div class="info_title_static" id="static_mask_name"></div></td>
+      <!--<td width="293" ><div ><input type="text" id="net_mask_c" style=" overflow:scroll;" value=""  /></div></td>-->
+      <td width="293" ><div id="net_mask_c" style=" overflow:scroll;"></div></td>
+    </tr>
+    <tr>
+      <td  width="115" height="60" ><div class="info_title_static" id="static_gateway_name"></div></td>
+    <!--  <td  width="293"  ><div ><input type="text" id="gateway_c" style=" overflow:scroll;" value=""/></div></td>-->
+      <td  width="293"  ><div id="gateway_c" style=" overflow:scroll;"></div></td>
+    </tr>
+    <tr>
+      <td width="115" height="60" ><div class="info_title_static" id="static_dns_name"></div></td>
+      <!--<td width="293" ><div ><input type="text" id="dns_c" style=" overflow:scroll;" value=""  /></div></td>-->
+      <td width="293" ><div id="dns_c" style=" overflow:scroll;"></div></td>
+    </tr>
+    <tr>
+        <td  height="20" colspan="2"></td>
+    </tr>
+    <tr style="background:none;">
+       <td height="58" colspan="2" style="padding:0px 2px 0px 64px;"><span id="static_link" ></span><span id="static_cancel" ></span></td>
+    </tr>
+    <tr>
+        <td  height="60" colspan="2"><div id = "static_save_tip"></div></td>
+    </tr>
+  </table>
+</div>
+<div id="content_wiredless" style="visibility:hidden;">
+	  <table width="409" border="0" cellspacing="5" cellpadding="0">
+    <tr>
+      <td  height="67" colspan="2"><div class="info_title_first" id="wifi_network"></div></td>
+    </tr>
+    <tr>
+      <td  width="115" height="60" ><div class="info_title"></div></td>
+      <td  width="293"  ><div id = "wiredless_name" ></div></td>
+    </tr>
+    <tr>
+      <td width="115" height="60" ><div class="info_title" id="wifi_pwd"></div></td>
+     <!-- <td width="293" ><div><input type="text" id="wiredless_login_pw" style=" overflow:scroll;" value=""  /></div></td>-->
+      <td width="293" ><div id="wiredless_login_pw" style=" overflow:scroll;"></div></td>
+    </tr>
+    <tr>
+        <td  height="30" colspan="2"></td>
+    </tr>
+    <tr style="background:none;">
+       <td height="58" colspan="2" style="padding:0px 32px 0px 49px;"><span id="wiredless_link" ></span><span id="wiredless_cancel" ></span></td>
+    </tr>
+    <tr>
+        <td  height="50" colspan="2"><div id = "wiredless_save_tip"></div></td>
+    </tr>
+  </table>
+</div>
+<div id="back_tiper"></div>
+<!--键盘代码页面-->
+<div id="keyboard">
+		<ul id="keyboard_whole" style="display: none;">
+			<div id="switchLetter" class="keyboardContainerUp" style="display:block;">
+				<li class="FakeBlock"> </li>
+				<li id="key_a" class="MiddleKey bigFontSize">a</li>
+				<li id="key_b" class="MiddleKey bigFontSize">b</li>
+				<li id="key_c" class="MiddleKey bigFontSize">c</li>
+				<li id="key_d" class="MiddleKey bigFontSize">d</li>
+				<li id="key_e" class="MiddleKey bigFontSize">e</li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_f" class="MiddleKey bigFontSize">f</li>
+				<li id="key_g" class="MiddleKey bigFontSize">g</li>
+				<li id="key_h" class="MiddleKey bigFontSize">h</li>
+				<li id="key_i" class="MiddleKey bigFontSize">i</li>
+				<li id="key_j" class="MiddleKey bigFontSize">j</li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_k" class="MiddleKey bigFontSize">k</li>
+				<li id="key_l" class="MiddleKey bigFontSize">l</li>
+				<li id="key_m" class="MiddleKey bigFontSize">m</li>
+				<li id="key_n" class="MiddleKey bigFontSize">n</li>
+				<li id="key_o" class="MiddleKey bigFontSize">o</li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_p" class="MiddleKey bigFontSize">p</li>
+				<li id="key_q" class="MiddleKey bigFontSize">q</li>
+				<li id="key_r" class="MiddleKey bigFontSize">r</li>
+				<li id="key_s" class="MiddleKey bigFontSize">s</li>
+				<li id="key_t" class="MiddleKey bigFontSize">t</li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_u" class="MiddleKey bigFontSize">u</li>
+				<li id="key_v" class="MiddleKey bigFontSize">v</li>
+				<li id="key_w" class="MiddleKey bigFontSize">w</li>
+				<li id="key_x" class="MiddleKey bigFontSize">x</li>
+				<li id="key_y" class="MiddleKey bigFontSize">y</li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="fun_del_letter" class="MiddleKey FunctionKey"></li>
+				<li class="MiddleKey"> </li>
+				<li id="key_z" class="MiddleKey bigFontSize">z</li>
+				<li class="MiddleKey"> </li>
+				<li id="fun_enter_letter" class="MiddleKey FunctionKey"></li>
+			</div>
+			<div id="switchNumber"  class="keyboardContainerUp" style="display: none">
+				<li class="FakeBlock"> </li>
+				<li id="key_1" class="MiddleKey bigFontSize">1</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_2" class="MiddleKey bigFontSize">2</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_3" class="MiddleKey bigFontSize">3</li>
+	
+				<li class="FakeRow"> </li>
+	
+				<li class="FakeBlock"> </li>
+				<li id="key_4" class="MiddleKey bigFontSize">4</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_5" class="MiddleKey bigFontSize">5</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_6" class="MiddleKey bigFontSize">6</li>
+				
+				<li class="FakeRow"> </li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_7" class="MiddleKey bigFontSize">7</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_8" class="MiddleKey bigFontSize">8</li>
+				<li class="MiddleKey"> </li>
+				<li id="key_9" class="MiddleKey bigFontSize">9</li>						
+				
+				<li class="FakeRow"> </li>
+				<li class="FakeRow2"> </li>
+				
+				
+				<li class="FakeBlock"> </li>
+				<li id="fun_del_num" class="MiddleKey FunctionKey"></li>
+				<li class="MiddleKey"> </li>
+				<li id="key_0" class="MiddleKey bigFontSize">0</li>
+				<li class="MiddleKey"> </li>
+				<li id="fun_enter_num" class="MiddleKey FunctionKey"></li>
+			</div>
+			<div id="switchSymbol"  class="keyboardContainerUp" style="display: none">
+				<li class="FakeBlock"> </li>
+				<li id="key_sym1" class="MiddleKey bigFontSize">@</li>
+				<li id="key_sym2" class="MiddleKey bigFontSize">.</li>
+				<li id="key_sym3" class="MiddleKey bigFontSize">,</li>
+				<li id="key_sym4" class="MiddleKey bigFontSize">?</li>
+				<li id="key_sym5" class="MiddleKey bigFontSize">!</li>
+				
+				<li class="FakeRow3"> </li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_sym6" class="MiddleKey bigFontSize">;</li>			
+				<li id="key_sym7" class="MiddleKey bigFontSize">:</li>
+				<li id="key_sym8" class="MiddleKey bigFontSize">''</li>
+				<li id="key_sym9" class="MiddleKey bigFontSize">*</li>	
+				<li id="key_sym10" class="MiddleKey bigFontSize">+</li>	
+				
+				<li class="FakeRow3"> </li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="key_sym11" class="MiddleKey bigFontSize">-</li>			
+				<li id="key_sym12" class="MiddleKey bigFontSize">=</li>
+				<li id="key_sym13" class="MiddleKey bigFontSize">#</li>
+				<li id="key_sym14" class="MiddleKey bigFontSize">$</li>	
+				<li id="key_sym15" class="MiddleKey bigFontSize">%</li>		
+                
+                <li class="FakeRow3"> </li>		
+                
+				<li class="FakeBlock"> </li>
+				<li id="key_sym16" class="MiddleKey bigFontSize">&lt;</li>			
+				<li id="key_sym17" class="MiddleKey bigFontSize">&gt;</li>
+				<li id="key_sym18" class="MiddleKey bigFontSize"> / </li>
+				<li id="key_sym19" class="MiddleKey bigFontSize"> ^ </li>	
+				<li id="key_sym20" class="MiddleKey bigFontSize"> ~ </li>					
+				
+				<li class="FakeRow3"> </li>
+				<li class="FakeRow2"> </li>
+				
+				<li class="FakeBlock"> </li>
+				<li id="fun_del_sym" class="MiddleKey FunctionKey"></li>
+				<li class="MiddleKey"> </li>
+				<li id="fun_space" class="MiddleKey FunctionKey"></li>
+				<li class="MiddleKey"> </li>
+				<li id="fun_enter_sym" class="MiddleKey FunctionKey"></li>
+			</div>
+			<div id="switchArea" class="bottomControl">	
+                <li class="FakeBlock2"> </li>
+                <li id="switch_small" class="SwitchKeyCur"></li>
+                <li id="switch_big" class="SwitchKey"></li>
+                <li id="switch_num" class="SwitchKey"></li>
+                <li id="switch_sym" class="SwitchKey"></li>
+			</div>	
+			<div style="clear:both"> </div>
+		</ul>
+		
+		<ul id="keyboard_ipinput" style="display: none; width:415px;">
+			
+			<li class="FakeBlock"> </li>
+			<li id="key_ip_1" class="MiddleKey bigFontSize">1</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_2" class="MiddleKey bigFontSize">2</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_3" class="MiddleKey bigFontSize">3</li>
+			
+			<li class="FakeRow"> </li>
+
+			<li class="FakeBlock"> </li>
+			<li id="key_ip_4" class="MiddleKey bigFontSize">4</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_5" class="MiddleKey bigFontSize">5</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_6" class="MiddleKey bigFontSize">6</li>
+			
+			<li class="FakeRow"> </li>
+			
+			<li class="FakeBlock"> </li>
+			<li id="key_ip_7" class="MiddleKey bigFontSize">7</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_8" class="MiddleKey bigFontSize">8</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_9" class="MiddleKey bigFontSize">9</li>	
+			
+			<li class="FakeRow"> </li>					
+			
+			<li class="FakeBlock"> </li>
+			<li id="fun_ip_del_num" class="MiddleKey FunctionKey"></li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_0" class="MiddleKey bigFontSize">0</li>
+			<li class="MiddleKey"> </li>
+			<li id="key_ip_dot" class="MiddleKey FunctionKey">.</li>			
+			
+			<li class="FakeBlock"> </li>
+			<li class="MiddleKey"> </li>
+			<li class="MiddleKey"> </li>
+			<li id="fun_enter_ip" class="MiddleKey FunctionKey"></li>
+
+			<div style="clear:both"> </div>
+		</ul>
+	</div>
+    <div id = "keyboardTip">
+    	<div id ="tipContent"></div>
+    </div>
+<!--键盘代码结束-->
+<script type="text/javascript">
+
+function initpage(){
+	try{
+		getLanguage();
+		Navigation.disableDefaultNavigation();//禁用超链接自动聚焦功
+		menuArea.init();
+		showMessage();
+	}catch(e){
+		GF_WebPrint(e);
+	}
+}
+</script>
+</body>
+</html>

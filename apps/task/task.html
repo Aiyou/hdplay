@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NPVR-录制管理</title>
+<link href="../../common/css/style.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="css/task.css" />
+<script src="../../common/js/ovt.js"></script>
+<script src="../../common/js/global.js"></script>
+<script type="text/javascript" src="js/task.js"></script>
+<script type="text/javascript">
+document.onkeypress = grabEvent;
+
+function grabEvent(event){
+		var val = event.which | event.keyCode;
+		switch(val){
+			case ROC_IRKEY_UP:
+			case 38:
+				listArea.up();
+			break;
+			case ROC_IRKEY_DOWN:
+			case 40:
+				listArea.down();		
+			break;
+			case ROC_IRKEY_LEFT:
+			case 37:
+				listArea.left();
+			break;
+			case ROC_IRKEY_RIGHT:
+			case 39:
+				listArea.right();
+			break;
+			case ROC_IRKEY_SELECT:
+			case 13:
+				listArea.myhref();
+			break;
+			case ROC_IRKEY_BACK:
+			case 8:
+				window.location.href="../index/index.html"
+			break;
+			case ROC_IRKEY_EXIT:
+			case 1285:
+				window.location.href="../index/index.html";
+			break;
+		}
+}
+function pageload(){
+	init();
+}
+</script>
+
+</head>
+
+<body onload="pageload()">
+<div class="top">
+	<div class="logo"></div>
+</div>
+<div class="up">
+	<div class="up_bg">
+        <div class="content_title">
+            <div class="content_title_program">节目</div>
+            <div class="content_title_channel">频道</div>
+            <div class="content_title_status">状态</div>
+            <div class="content_title_size">大小</div>
+            
+        </div>	
+         <div class="content_list_area">
+            <div id="content_list">
+                <!--<div class="content_program" id="list_pad0">节目<span class="channel_content">CCTV-1</span><span class="list_state">已完成</span>1<span class="size_content">250M</span><span class="list_delete" id="delete0"> </span></div>
+                <div class="content_program" id="list_pad1">节目21<span class="channel_content">CCTV-1</span><span class="list_state">正在录制</span><span class="size_content">250M</span><span class="list_delete" id="delete1"> </span></div>
+                <div class="content_program" id="list_pad2">节目31<span class="channel_content">CCTV-1</span><span class="list_state">正在录制</span><span class="size_content">250M</span><span class="list_delete" id="delete2"> </span></div>
+                <div class="content_program" id="list_pad3">节目41<span class="channel_content">CCTV-1</span><span class="list_state">正在录制</span><span class="size_content">250M</span><span class="list_delete" id="delete3"> </span></div>
+                <div class="content_program" id="list_pad4">节目51<span class="channel_content">CCTV-1</span><span class="list_state">已完成</span><span class="size_content">250M</span><span class="list_delete" id="delete4"> </span></div>
+                <div class="content_program" id="list_pad5">节目61<span class="channel_content">CCTV-1</span><span class="list_state">已完成</span><span class="size_content">250M</span><span class="list_delete" id="delete5"> </span></div>
+               <div class="content_program" id="list_pad6">节目71<span class="channel_content">CCTV-1</span><span class="list_state">已完成</span><span class="size_content">250M</span><span class="list_delete" id="delete6"> </span></div>-->
+           </div>
+        </div>
+        <div id="small_focus"></div>
+    </div>
+</div>
+<div class="bottom">
+    <div class="totole_title">空间大小：</div>
+    <div id="totole_content"></div>
+    <div class="left_title">可用空间大小：</div>
+    <div id="left_content"></div>
+    <div class="used_title">已用空间大小：</div>
+    <div id="used_content"></div>
+    <div class="date_title">空间有效期：</div>
+    <div id="date_content"></div>
+</div>
+<div id="tip">
+	<div class="tip_title">删除节目</div>
+    <div class="tip_content">是否确定删除当前节目</div>
+    <div id="tip_affirm_bg"></div>
+    <div id="tip_cancel_bg"></div>
+    <div id="tip_affirm">确认</div>
+    <div id="tip_cancel">取消</div>
+</div>
+<div id="tipTip">
+    <div id="tipTip_content">是否确定删除当前节目</div>
+</div>
+<div class="down_area">
+	<div id="total"></div>
+    <div id="page"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>频道列表</title>
+<script type="text/javascript" src="../../static/js/const.js"></script>
+<script type="text/javascript" src="../../static/js/ajax2.js"></script>
+<script type="text/javascript" src="../../static/js/ui_tv.js"></script>
+<script type="text/javascript" src="../../static/js/allchannel.js"></script>
+<link href="css/tv.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="opacity:0;">
+   
+<!-- 全部频道-->
+<div id="ch_bg" style="opacity:1;display:none;">
+    <div id="ch_menu">
+          <ul id="div_menu">
+			  <!--li sid='$id' programid='$programID' idx='$idx'>$class</li-->
+          </ul>
+    </div>
+
+</div>
+
+<div id="ch_detail" style="display:none;">
+    <div id="ch_lists">
+			<ul id="div_lists">
+                
+           </ul>  
+		
+    </div>
+
+</div>
+
+<!--当前节目的信息栏-->
+<div id="content" style="display:none;opacity:1">
+    	<div id="channel_focus"><span class="channel_id" id="spanChannelID"></span><span class="channel_name" id="spanChannelName"></span></div>
+        <div id="channel_lists">
+            <ul>
+            	<li><span class="time_up"></span> <span class="list_name1"></span></li>
+            	<li><span class="time_down"></span> <span class="list_name2"></span></li>
+            </ul>
+        </div>
+		<div id="date">
+			<ul>
+            	<li><span class="time" id="spanTime"></span></li>
+            	<li><span class="week" id="spanWeek"></span>&nbsp;&nbsp;<span class="date" id="spanDate"></span></li>
+            </ul>
+		</div>
+    </div>
+<!--volumestare -->
+<div id="Volume_Div" style="display:none;opacity:1">
+  <div id="volume_mute" style="display:none"></div>
+  <div id="volume"></div>
+  <div id="volume_value"></div>
+</div>
+</body>
+</html>
+
+<div id="div_msg" style="opacity:1;color:#ff0000;display:none;">
+</div>
+<div id="div_ad">
+</div>
+<script>
+//先获取标识码再AJAX验证
+var mac_addr = getAuthMac();
+//var mac_addr = '00:D0:33:9A:2F:F3';
+//loadJS(MY_API_ADDR + 'get_wtv_menu.php?area_id=8&mac=' + mac_addr + '&' + new Date().getTime());
+loadJS("js/load.js");
+window.onload = function()
+{
+	if(typeof(menuArr) == "undefined" )
+	{	
+		//document.getElementsByTagName_r('p')[0].innerText = "Unauthorized user";
+		document.write('<p class="error" style="background-color:#000;opacity:244;font-size:20px;color:#fff;left:200px;top:200px;position:absolute"><br />未授权用户!</p>');
+		document.onkeypress = function(e){
+				var keycode = e.which ||e.keyCode;
+				switch (keycode)
+				{
+				case ROC_IRKEY_BACK:
+					window.location.href = "../index/index.html";
+					break;
+				default :window.location.href = "../index/index.html";
+				}
+		}
+		
+	}
+}
+//o('channel_lists').innerHTML = '<img src="'+ MY_API_ADDR +'../images/tv.jpg" width=740 height=85 />';
+//5秒钟之后 关闭广告
+//window.setTimeout(function(){
+//	hideDiv('div_ad');
+//},5000);
+</script>

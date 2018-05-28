@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+body{width:1280px; height:720px; font-size:25px; color:#FFF; font-family:'黑体'; margin:0; padding:0; background:url(../images/bg_channel.png) no-repeat;}
+
+/*频道列表*/
+.pub_main_menu { height: 549px; position: absolute; top: 79px; left:90px; width: 337px; padding-top:4px; text-indent:35px; font-size:25px; z-index:10;}
+._padding{padding-top:25px; padding-left:10px;}
+#channel{padding-top:25px; padding-left:10px;}
+.list_a{line-height:50px; height:55px; margin-top:-2px; padding-left:40px;}
+.pad{padding-left:20px;}
+#all_channel{top:480px; margin-left:80px; position:absolute; width:200px; height:50px;}
+#focus_a{position:absolute; top:92px; left:140px; width:275px; height:180px; background:url(../images/channel_focus.png) no-repeat; z-index:-1; 
+/*display:none;*/ visibility:hidden;}
+.error{top:5px; left:45px; position:absolute;}
+
+/*视频播放*/
+.video { height: 403px; left: 436px; position: absolute; top: 105px; width: 715px;}
+.video_play{position:relative; left:0px; top:0px; height: 403px; width: 715px; background:#000;  opacity:0; /*视频播放*/}
+
+/*播放信息*/
+.inf { height: 97px; left: 430px; position: absolute; top: 514px; width: 725px;}
+.time { font-size: 24px; height: 30px; left: 20px; position: absolute; top: 7px; width: 690px;}
+.time_begin{float:left;}
+.time_end{float:right;}
+.forward_bar{position:absolute; left:90px; top:17px; width:547px; height:10px; float:left;}
+#play_process{ height:8px; width:395px; float:left; background:url(../images/percent.png) ; margin-top:-10px;}
+.play_inf{position:absolute; left:20px; top:55px; width:690px; height:80px; float:left;}
+.present_content{position:relative; height:80px; width:250px; float:left; font-size:16px; overflow: hidden; white-space:nowrap; text-overflow:ellipsis; }
+.next_content{position:relative; height:80px; width:250px; float:right; font-size:16px; overflow: hidden; white-space:nowrap;  text-overflow:ellipsis; }
+
+.black { color: black; line-height:50px; height:55px; margin-top:-2px; padding-left:40px;}
+.white {color: white; line-height:50px; height:55px; margin-top:-2px; padding-left:40px;}

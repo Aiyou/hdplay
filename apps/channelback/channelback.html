@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EPG指南</title>
+<link href="../../common/css/style.css" rel="stylesheet" type="text/css" />
+<script src="../../common/js/ovt.js"></script>
+<script src="../../common/js/global.js"></script>
+<link href="css/epg.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../static/js/allchannel.js"></script>
+<script src="js/epgload.js"></script>
+<script src="js/epg.js"></script>
+
+</head>
+
+<body onload="initpage();">
+<!--<div id="test" style="top:50px; left:350px; height:200px; width:200px; position:absolute; color:#fff; font-size:30px;"></div>
+-->	
+<!--    <div class="system_time">
+        <div>
+            <div id="time_HMS"></div>
+            <div id="time_YMDW"></div>
+        </div>
+    </div>-->
+    <div id = "ch_bg"><div id="ch_name">全部频道</div></div>
+    <div id = "ch_focus"></div>
+    <div id = "ch_content">
+    </div>
+    
+  	<!--日期部分 -->  
+    <div id="date_bg">
+    	<div id="left_arrow"></div>
+        <div id="right_arrow"></div>
+    </div>
+	<div id="date_box">
+        <div id="date_lists">
+           <ul>
+              <li id="date_0"><span></span></li>
+              <li id="date_1"><span></span></li>
+              <li id="date_2"><span></span></li>
+              <li id="date_3"><span></span></li>
+              <li id="date_4"><span></span></li>
+              <li id="date_5"><span></span></li>
+              <li id="date_6"><span></span></li>
+          </ul>
+      </div>
+    </div>
+
+<!--EPG列表 -->
+	<div id="epg_bg"></div>
+    <div id="epg_focus"></div>
+    <div id="epg_lists">
+        <ul>
+            <li><span class="epg_time"></span><span class="epg_name"></span></li>
+            <li><span class="epg_time"></span><span class="epg_name"></span></li>
+        </ul>
+    </div>
+<!--提示框-->
+<div id="tipRecord">
+	<div class="tip_title">回看列表</div>
+    <div class="tip_content" id="record_info"></div>
+</div>
+</body>
+</html>

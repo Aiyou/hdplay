@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+body{ position:absolute; left:0; top:0; width:1280px; height:720px; margin:0; padding:0; /*background:url(../../../common/images/bg.jpg) no-repeat; */background:url(../../channelback/images/bg.jpg) no-repeat;font-family:'黑体'; font-size:24px; color:#fff;}
+image{ border:0 none;}
+.top{ top:0; left:0; position:absolute; height:100px; width:1280px; }
+.logo{ position:absolute; left:107px; top:50px; width:97px; height:40px; background:url(../images/index_logo.png) no-repeat;}
+
+.title{ position:absolute; left:405px; top:62px; width:753px; height:58px; background:url(../images/time_up.png) no-repeat;}
+.title_text{ position:absolute; left:50px; top:15px; width:500px; height:50px; color:#fff; font-size:22px;}
+
+.left{ position:absolute; left:115px; top:127px; background:url(../images/time_list.png) no-repeat; width:264px; height:515px;}
+.content_list_area{ position:absolute; left:30px; top:30px; height:511px; width:220px;  overflow:hidden; }
+#content_id{ position:absolute; top:0px;  width:110px; height:511px; padding-left:0px; z-index:999; }
+.name_content{line-height:51px; height:53px; margin-top:-2px; padding-left:20px;  text-align:center; width:300px; }
+
+#time_focus{position:absolute; top:25px; left:3px; background:url(../images/time_leftfocus.png) no-repeat; height:50px; width:260px; z-index:9999; visibility:hidden;}
+
+.right{position:absolute; left:405px; top:126px; background:url(../images/time_content.png) no-repeat; width:749px; height:510px;}
+.right_name,.right_begin,.right_end,.right_periods{ position:absolute; left:120px; width:200px; height:30px;}
+.right_name{ top:65px;}
+.right_begin{ top:135px;}
+.right_end{ top:208px;}
+.right_periods{ top:278px;}
+
+#input_name,#begin_year01,#begin_month01,#begin_day01,#begin_hour01,#begin_minute01,#begin_second01,#end_year01,#end_month01,#end_day01,#end_hour01,#end_minute01,#end_second01{ position:absolute; height:32px; display: block; border:none; outline: none; font-size:25px;  text-align:left; margin-left:5px;  line-height:33px;vertical-align:middle; padding-left:1px; margin: 0; padding: 0; }
+#input_name{top:64px; left:260px; width:362px; }
+.input_begin{ position:absolute; left:250px; top:135px; width:382px; height:32px; }
+#begin_year01{ top:3px; left:10px;  width:50px; }
+.beginyear_text{ position:absolute; left:70px; top:3px; width:25px; height:32px;}
+#begin_month01{ top:3px; left:99px;  width:15px; }
+.beginmonth_text{ position:absolute; left:130px; top:3px; width:25px; height:32px;}
+#begin_day01{ top:3px; left:157px;  width:15px; }
+.beginday_text{ position:absolute; left:190px; top:3px; width:25px; height:32px;}
+#begin_hour01{ top:3px; left:228px;  width:15px; }
+.beginhour_text{ position:absolute; left:262px; top:3px; width:15px; height:32px;}
+#begin_minute01{ top:3px; left:276px;  width:15px; }
+.beginminute_text{ position:absolute; left:312px; top:3px; width:15px; height:32px;}
+#begin_second01{ top:3px; left:327px;  width:15px; }
+.beginsecond_text{ position:absolute; left:362px; top:3px; width:15px; height:32px;}
+
+.input_end{ position:absolute; left:250px; top:206px; width:382px; height:32px;}
+#end_year01{ top:3px; left:10px;  width:50px; }
+.endyear_text{ position:absolute; left:70px; top:3px; width:25px; height:32px;}
+#end_month01{ top:3px; left:99px;  width:15px; }
+.endmonth_text{ position:absolute; left:130px; top:3px; width:25px; height:32px;}
+#end_day01{ top:3px; left:157px;  width:15px; }
+.endday_text{ position:absolute; left:190px; top:3px; width:25px; height:32px;}
+#end_hour01{ top:3px; left:228px;  width:15px; }
+.endhour_text{ position:absolute; left:262px; top:3px; width:15px; height:32px;}
+#end_minute01{ top:3px; left:276px;  width:15px; }
+.endminute_text{ position:absolute; left:312px; top:3px; width:15px; height:32px;}
+#end_second01{ top:3px; left:327px;  width:15px; }
+.endsecond_text{ position:absolute; left:362px; top:3px; width:15px; height:32px;}
+
+#date_focus1{ position:absolute; left:247px; top:137px; background:url(../images/focus1.png) no-repeat; width:65px; height:80px; visibility:hidden;}
+#date_focus{ position:absolute; left:325px; top:137px; background:url(../images/focus.png) no-repeat; width:35px; height:80px; visibility:hidden;}
+
+#right_focus{ position:absolute; left:280px; top:370px; background:url(../images/time_focus1.png) no-repeat; width:187px; height:48px;}
+
+.black { color: #fff; line-height:51px; height:53px; margin-top:-2px; padding-left:0px;}
+.red {color: #cc6832; line-height:51px; height:53px; margin-top:-2px; padding-left:0px;}
+#divout{left:0px;}
+
+#tipTip{ position:absolute; left:400px; top:250px; width:522px; height:283px; background:url(../images/dele_tip_bg.png) no-repeat; visibility:hidden; z-index:9999;}
+#tipTip_content{ position:absolute; left:50px; top:120px; width:434px; height:30px; text-align:center; font-size:26px; color:#000;}

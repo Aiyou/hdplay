@@ -1,0 +1,198 @@
+@charset "utf-8";
+*{
+	padding:0px;
+	margin:0px;	
+	color:#FFF;	
+}
+ul,li{
+	list-style:none;
+}
+img{
+	border:0px;
+}
+
+/*content*/
+.content{
+	position:relative;
+	margin:0px auto;
+	width:1280px;
+	height:720px;
+	overflow:hidden;
+/*	background:#001118;
+*/	background:url(../images/mi_list.jpg);
+}
+
+/*topArea*/
+.content .topArea{
+	width:100%;
+	height:118px;
+}
+.topArea img{
+	position:absolute;
+	left:37px;
+	top:28px;
+}
+.topArea h2{
+	position:absolute;
+	left:120px;
+	top:35px;
+	color:#CCC;
+}
+.topArea ul{
+	position:absolute;
+	left:340px;
+	top:28px;
+}
+.topArea li{
+	float:left;
+	margin-right:10px;
+	width:auto;
+	font-size:23px;
+	color:#CCC;
+}
+.topArea .line{
+	width:100%;
+	height:1px;
+	border-bottom:1px solid #333;
+	position:absolute;
+	left:0px;
+	top:80px;
+}
+/*nav*/
+.nav{
+	position:absolute;
+	left:37px;
+	top:120px;
+	width:256px;
+	height:auto;
+}
+.nav h2{
+	color:#999;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:10px;
+}
+.nav ul{
+	margin-left:0px;
+}
+.nav li{
+	width:85px;
+	float:left;
+	text-align:center;
+	padding-right:0px;
+	font-size:23px;
+	font-weight:bold;
+	line-height:40px;
+}
+.nav .curfocus{
+	background-image:url(../images/mi_icon.png);
+	background-position:-75px -12px;
+}
+
+
+/*program*/
+.program{
+	width:922px;
+	height:auto;
+	position:absolute;
+	top:125px;
+	left:300px;
+}
+.program #programFocus{
+	background:url(../images/icon.png) no-repeat -10px -59px;
+	width:155px;
+	height:220px;
+	position:absolute;
+	left:35px;
+	top:-4px;
+	visibility:hidden;
+	z-index:1;
+}
+.program .content2,.program .content3{
+	margin-left:22px;
+	width:auto;
+	height:267px;
+	z-index:99;
+}
+.program .content3{
+	margin-top:0px;
+}
+.program li{
+	text-align:center;
+	float:left;
+	height:267px;
+	width:180px;
+	display:block;
+}
+.program img{
+	border:2px solid #666;
+	width:139px;
+	height:206px;
+	background:url(../images/nopic_index_on.jpg) 25% 50% ;
+}
+.program h1{
+	font-size:23px;
+	margin-top:13px;
+	height:20px;
+}
+/*当前节目的焦点状态*/
+.program .curProgram h1{
+	font-size:23px;
+	color:#ff9000;
+}
+.program .curProgram img{
+	width:132px;
+	height:179px;
+	margin-top:0px;
+	border:0px;
+}
+.mepg {
+	display:block;
+	background:url(../images/nopic_index_on.jpg) 25% 50% no-repeat;
+	width:116px;
+	height:160px;
+}
+.sliderbg{
+	position:absolute;
+	right:40px;
+	top:100px;
+	width:8px;
+	height:582px;
+	background:url(../images/slider.png) -22px -9px;
+}
+#slider{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:7px;
+	height:87px;
+	background:url(../images/slider.png) -11px -10px;
+}
+
+/*.pageControl{
+	position:absolute;
+	clear:both;
+	width:298px;
+	left:265px;
+	bottom:-45px;
+}
+.pageControl #page0,.pageControl #page1,.pageControl .text{
+	width:114px;
+	height:40px;
+	line-height:40px;
+	font-weight:bold;
+	float:left;
+}
+.pageControl .text{
+	width:70px;
+	color:#00ccff;
+}
+.pageControl .show{
+	background:url(../images/icon.png) -9px -10px no-repeat;
+	color:#000000;
+}
+.pageControl .hide{
+	background:url(../images/icon.png) -173px -10px no-repeat;
+	color:#fff;
+}
+*/

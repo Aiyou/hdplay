@@ -1,0 +1,287 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VOD播放页面</title>
+<link href="../../common/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/mp3_play.css" rel="stylesheet" type="text/css" />
+<style>
+#playimg{ 
+width:96%;
+position:absolute;
+height:85%; 
+/*border: thin solid #F00; */
+margin:0 auto; 
+}
+#playimg table{ height:100%; width:100%; text-align:center;}
+</style>
+<script src="../../common/js/global.js"></script>
+<script src="../../common/js/ovt.js"></script>
+<script src="js/mp3_play.js"></script>
+<script type="text/javascript">
+Navigation.disableDefaultNavigation();//禁用超链接自动聚焦功
+
+var mp = new OVT_media(); //构造播放器实例
+//获取通过url传递的参数
+var parameter = {"programId":unescape($G.getParameter("programId")),		//节目id
+				 "subId":unescape($G.getParameter("subId")),  				//子集Id-如果没有subId，就是电影
+		  		 //"progtime":unescape($G.getParameter("progtime") || 3600),	//时长
+				 "progtime":"",
+				 "programName":decodeURI($G.getParameter("programName")),	//节目名称
+				 "type":unescape($G.getParameter("type")),					//节目类型
+				 "playUrl":unescape($G.getParameter("playUrl")),			//播放地址
+				 "cookieId":"",
+				 "imgurl":unescape($G.getParameter("imgurl"))
+				 };
+
+var playUrl = []; //保存转换后的播放地址
+
+var pageObj;//页面当前控制对象（控制面板、小窗口）
+function checkPageObj(){
+	if(smallwin.isShow){	//小窗口显示中
+		pageObj = smallwin;
+	}else if(smallwin.isShow && videoControl.isShow){
+		pageObj = smallwin;
+	}else{
+		pageObj = videoControl;
+	}
+}
+
+function getProgPT( ){
+	var curName;
+	playUrl = parameter.playUrl
+	// 电视剧
+	if( parameter.playUrl.indexOf('\r\n') != -1){
+		playUrl = parameter.playUrl.split('\r\n');
+		curName = parameter.programName + '第' + parameter.subId +'集';
+		setPlay( curName, playUrl[ parameter.subId - 1 ] ,parameter.subId);
+	}else{
+		curName = parameter.programName;	
+		setPlay( curName, playUrl ,parameter.subId);
+	}
+}
+
+//添加书签功能
+function savePoint(func){
+	var url = MY_PORTAL_ADDR +"/AddSavedProgramRequest" +
+					"?client=100"+
+					"&assetId="+ parameter.assetId +
+					"&folderAssetId="+ parameter.folderAssetId +
+					"&serviceType=1" +
+					"&resumePointDisplay="+ mp.getplaytime() * 1000;
+	Ajax.request(url,{
+		success: function( data ) {
+			if( data[ 0 ].code == 200 ){
+				//添加成功暂不做其他处理
+			}else{
+				showSysError("添加书签失败！");
+			}
+			func(); //不过成功还是失败，都执行该方法
+		},
+		failure: function( data ) {
+			showSysError("添加书签失败！");	
+			func();				
+		}
+   });
+}
+
+//获取节目信息后处理播控条和播放参数
+//name 节目名称
+//url播放地址
+//cookieValue保存子集id
+function setPlay(name, URL ,cookieValue){
+	name=getStrChineseLen(name,17)
+	parameter.cookieId = cookieValue;
+	
+	media.play(URL);
+	parameter.progtime = mp.getProgramLen();
+	GF_WebPrint("##################################"+parameter.progtime)
+
+	videoControl.init( name );
+	videoControl.refreshPanel();
+}
+
+function pageload(){
+	//alert(parameter.imgurl)
+	$("playimg").innerHTML="<table><tr><td><img src='"+parameter.imgurl+"' /></td></tr></table>";
+	//alert(parameter.imgurl)
+	mp.init(0,0,0,1280,720);
+	getProgPT();
+	
+}
+
+//保存cookie-子集id
+function saveCookie(){
+	addCookie( "vod_subid",parameter.cookieId );
+}
+
+function onUnload(){
+	mp.close();
+}
+
+document.onkeypress = grabEvent;
+
+function grabEvent(event){
+	checkPageObj();
+	var val = event.which | event.keyCode;
+	switch(val){
+			case ROC_IRKEY_UP:
+			case 38:
+				pageObj.up();
+			break;
+			case ROC_IRKEY_DOWN:
+			case 40:
+				pageObj.down();		
+			break;
+			case ROC_IRKEY_LEFT:
+			case 37:
+				pageObj.left();
+			break;
+			case ROC_IRKEY_RIGHT:
+			case 39:
+				pageObj.right();
+			break;
+			case ROC_IRKEY_SELECT:
+			case 13:
+				pageObj.onSelect();
+			break;
+//			case 8:
+//			case 1285:
+//			case "KEY_BACK":
+//				//goBack();
+//				pageObj.myBack();
+//			break;
+			
+			case ROC_IRKEY_VOLUME_UP:
+				VolumeControl.setVolumeUp();
+			break;
+			case ROC_IRKEY_VOLUME_DOWN:
+				VolumeControl.setVolumeDown();
+			break;
+			case ROC_IRKEY_VOLUME_MUTE:
+				VolumeControl.setMute();
+			break;		
+//			case "KEY_PLAY":
+//				if(pageObj == videoControl){
+//					var tempStatus = videoControl.getStatus();
+//					if( tempStatus != "drag" && tempStatus != "jump" ){
+//						videoControl.onSelect();
+//					}
+//				}
+//			break;
+//			case "KEY_FAST":
+//				if(pageObj == videoControl){
+//					videoControl.right();
+//				}		
+//			break;
+//			case "KEY_REWIND":
+//				if(pageObj == videoControl){
+//					videoControl.left();
+//				}
+//			break;	
+//			case "KEY_STOP":
+//				if(pageObj == videoControl){
+//					videoControl.myBack();
+//				}
+//			break;			
+//			case ROC_IRKEY_NUM0:
+//			case ROC_IRKEY_NUM1:
+//			case ROC_IRKEY_NUM2:
+//			case ROC_IRKEY_NUM3:
+//			case ROC_IRKEY_NUM4:
+//			case ROC_IRKEY_NUM5:
+//			case ROC_IRKEY_NUM6:
+//			case ROC_IRKEY_NUM7:
+//			case ROC_IRKEY_NUM8:
+//			case ROC_IRKEY_NUM9:
+//				if(pageObj == videoControl){
+//					var tempStatus = videoControl.getStatus();
+//					if(tempStatus == "jump")
+//					videoControl.input(val);
+//				}				
+//		    break;
+			case ROC_IRKEY_LOCATION:
+				if(pageObj != videoControl){
+					//videoControl.input();
+					
+				}
+			break;
+//			case "KEY_LOCATION":
+//			case 271:
+//				if(pageObj == videoControl){
+//					videoControl.up();
+//				}
+//			break;
+//			case "VOLUME_TRACK":
+//				trackChannelChange( mp );
+//			break;
+			case ROC_IRKEY_BACK:
+				//window.location=history.go(-1);
+				window.history.go(-1);
+				//window.location = "vod_tele_detail.html?id="+parameter.programId;
+				//saveCookie();
+				//pageObj.myBack();                                               
+			break;
+			case ROC_IRKEY_EXIT:
+				//pageObj.myBack();
+				window.location = "../index/index.html";
+			break;
+	}
+}
+</script>
+</head>
+<body style="opacity:0; width:1280px; height:720px; margin: 0;background-color:#000;" onload="pageload()" onunload="onUnload()">
+<div style="display:none"><img src="images/play_icon.png"/></div>
+<div id="playimg">
+</div>
+<!--播控条开始-->
+<div id="playpanel" style="display:block;">
+  <div id="progress"></div>
+  <div id="jumpdiv">
+    <div id="jumptime" style="visibility:hidden;">
+    <input type="text" id="jt0" style="background-color:transparent;  border:0px;"  size="2" maxlength="2" />
+    <span>:</span>
+   <input type="text" id="jt1" style="background-color:transparent;  border:0px;"  size="2" maxlength="2"/>
+    <span class="span2">:</span>
+    <input type="text" id="jt2" style="background-color:transparent;  border:0px;"    size="2" maxlength="2"/>
+<!--    <span id="jt0">0</span><span id="jt1">0</span>:<span id="jt2">0</span><span id="jt3">0</span>:<span id="jt4">0</span><span id="jt5">0</span>
+-->    </div>
+
+    <div id="dot" class="dot_off"></div>
+  </div>
+  <div id="curtime">00:00:00</div>
+  <div id="endtime">00:00:00</div>
+  <div class="prognameTip"></div>
+  <div id="progname"></div>
+  <div id="fastRewind" class="fastRewind_off"></div>
+  <div id="state" class="pause_on"></div>
+  <div id="fastForward" class="fastForward_off"></div>
+  <div id="speed"></div>
+  <!--暂停提示-->
+  <div id="playpauseTip" class="playpause"><span>你还可以暂停</span><span id="playpauseTime">0</span></div>
+</div>
+<!--播控条结束-->
+
+<div id="smallwin" style="visibility: hidden;">
+  <div id="content"></div>
+  <div id="button0" ></div>
+  <div id="button1" class="on"></div>
+</div>
+
+<!--书签功能-->
+<div id="wid_exitc" style="visibility: hidden;">
+	<p>正在播放的是</p>
+	<p id="bookmark_name" class="title"></p>
+	<span class="exit"><em id="bookmark0"></em></span>
+	<span class="cancel"><em id="bookmark1"></em></span>
+	<span class="point"><em id="bookmark2"></em></span>
+</div>
+
+<!--volumestare -->
+<div id="Volume_Div">
+  <div id="volume_mute"></div>
+  <div id="volume"></div>
+  <div id="volume_value"></div>
+</div>
+</body>
+</html>

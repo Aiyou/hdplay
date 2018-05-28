@@ -1,0 +1,305 @@
+@charset "utf-8";
+*{
+	padding:0px;
+	margin:0px;	
+	color:#FFF;	
+}
+ul,li{
+	list-style:none;
+}
+img{
+	border:0px;
+}
+
+/*content*/
+.content{
+	position:relative;
+	margin:0px auto;
+	width:1280px;
+	height:720px;
+	overflow:hidden;
+	background:url(../images/mi_detail.jpg);
+}
+.top{ position:absolute; left:1035px; top:24px; height:37px; width:200px; font-size:28px; color:#6b6161;}
+/*topArea*/
+/*topArea*/
+.content .topArea{
+	width:100%;
+	height:50px;
+}
+.topArea img{
+	position:absolute;
+	left:70px;
+	top:32px;
+}
+.topArea h2{
+	position:absolute;
+	left:105px;
+	top:31px;
+	font-size:27px;
+	font-weight:700;
+	font-family:"黑体" !important;
+	color:#efefef;
+
+}
+.topArea ul{
+	position:absolute;
+	left:1110px;
+	top:31px;
+}
+.topArea li{
+	float:left;
+	margin-right:20px;
+	width:auto;
+	font-size:20px;
+	color:#CCC;
+	font-family:"Microsoft YaHei" !important;
+}
+.mi_back{
+font-size:20px;
+color:#d3d3d3;padding-left:40px;height:41px;line-height:41px;
+background:url(../images/mi_botton.png) 0px 0px no-repeat ;
+font-family:"Microsoft YaHei" !important;
+}
+.mi_back_on{
+font-size:20px;
+color:#fff;padding-left:40px;height:41px;line-height:41px;
+background:url(../images/mi_botton.png) -152px 0px no-repeat;
+font-family:"Microsoft YaHei" !important;
+}
+
+
+
+/*nav*/
+
+.nav {
+    height: 325px;
+    left: 80px;
+    padding-top: 45px;
+    top: 85px;
+}
+
+.nav img{
+	border:solid 5px #5b803f;
+}
+.description{
+	width:850px;
+	font-family:"Microsoft YaHei" !important;
+	height:250px;
+}
+
+.description h2{
+	font-size:30px;
+	font-weight:bolder;
+}
+.description h3{
+	margin-top:18px;
+	font-size:22px;
+	font-weight:100;
+	color:#f0f0f0;
+}
+.description p{
+	margin-top:28px;
+	font-size:20px;	
+	line-height:34px;
+	color:#d6d6d6;
+}
+
+.button{
+	width:118;
+	float:left;
+	
+}
+.button div{
+	float:left;
+	width:115px;
+	height:60px;
+	margin-right:18px;
+	background:url(../images/mi_icon.png) -4px -85px no-repeat;
+}
+.button div span{
+	display:block;
+	float:left;
+	height:55px;
+	line-height:46px;
+	text-align:center;
+}
+.button_1,.button_2,.button_3,.button_4{
+	width:33px;
+	background:url(../images/mi_icon.png) 7px -143px no-repeat;
+}
+.button_2{
+	background-position:-44px -143px;
+}
+.button_3{
+	background-position:-92px -143px;
+}
+.button_4{
+	background-position:-144px -143px;
+}
+.button_content{
+	width:70px;
+	font-size:24px;
+}
+.button_focus{
+	/*background:url(../images/mi_icon.png) -158px -85px;*/
+	background:url(images/mi_icon.png);
+}
+
+/*推荐节目*/
+#hot_rec{
+	width:auto;
+	font-size:24px;
+	padding-left:85px;
+	padding-bottom:5px;
+	font-family:"Microsoft YaHei" !important;
+	color:#eee;
+}
+.recommend{
+	/*position:absolute;
+	width:100%;
+	left:0px;
+	top:420px;
+	*/
+	width:100%;
+}
+
+.recommend h2{
+ 
+	bottom:0px;
+	left:0px;
+	width:100%;
+	line-height:20px;
+	font-size:15px;
+
+
+}
+.recommend img{
+	 width:150px;
+	 height:200px;
+
+}
+.recommend #recommendFocus{
+	background:url(../images/mi_light_s.png) no-repeat center center;
+	width:188px;
+	height:252px;
+	
+	left:-17px;
+	top:-24px;
+
+}
+
+
+
+
+
+
+.content2{
+	margin-left:65px;
+	height:224px;
+}
+.content2 td{
+	text-align:center;
+	height:224px;
+	width:188px;
+	
+}
+.content2  td.mi_border{
+
+width:188px;
+height:224px;
+background:url(../images/mi_line1_s.png) no-repeat center top;
+}
+.content2 td.mi_focus{
+background:url(../images/mi_light_s.png) no-repeat center top;
+
+width:188px;
+height:224px;
+}
+
+.content2 td img{
+	/*border:2px solid #666;*/
+	width:150px;
+	height:200px;
+	background:url(../images/nopic_index_on.jpg) 25% 50% ;
+	
+
+}
+.content2 tr td span{
+	font-size:20px;
+
+	font-family:"Microsoft YaHei" !important;
+	color:#eaeaea;
+	line-height:53px;
+	height:42px;display:block
+	
+}
+
+.div_clear{clear:both;}
+
+
+
+/*选集*/
+.moreItem{
+	width:100%;
+	height:300px;
+	background:#000;
+	padding-top:50px;
+	background:url(../images/mi_list_bg.png);
+	position:absolute;
+	top:420px;
+	z-index:9;
+	margin-top:30px;
+	
+}
+.moreItem h2{
+	width:100%;
+	height:30px;
+	padding-left:78px;
+	padding-top:13px;
+	font-size:24px;
+}
+#itemList{
+padding-left:75px;padding-top:10px;
+	width:1150px;
+}
+#moreItem #itemList  li{
+	float:left;
+	width:110px;
+	line-height:45px;
+	text-align:center;
+	font-size:24px;
+	border-right:1px solid #666;
+	border-top:1px solid #666;
+	border-bottom:1px solid #666;
+	border-left:1px solid #666;
+background-color:#111;
+}
+
+
+#itemArea{
+
+	left:40px;
+
+}
+#itemArea li{
+	float:left;
+	width:127px;
+	line-height:60px;
+	text-align:center;
+	font-size:24px;	
+}
+#itemList li.o{
+	background:url(../images/list_focus.gif) repeat-x;
+}
+#itemFocus{
+	left:0px;
+	top:97px;
+	width:127px;
+	height:60px;
+	background:url(../images/list_focus.gif) repeat-x;
+}
+#div_msg{
+position:absolute;z-index:100;display:none;font-size:25px;background:#000;color:#fff;
+padding-top:25px;height:80px;width:200px;text-align:center;font-weight:bold
+}

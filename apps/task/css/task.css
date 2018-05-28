@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+body{ /*background:url(../../../common/images/bg.jpg) no-repeat;*/background:url(../../channelback/images/bg.jpg) no-repeat; position:absolute; width:1280px; height:720px; top:0; left:0;  margin:0; padding:0; font-family:'黑体'; font-size:22px; color:#fff;}
+image{ border:0 none;}
+.top{ top:0; left:0; position:absolute; height:100px; width:1280px; }
+.logo{ position:absolute; left:107px; top:50px; width:97px; height:40px; background:url(../images/index_logo.png) no-repeat;}
+.up{ position:absolute; left:113px; top:108px; width:1052px; height:490px; }
+.up_bg{position:absolute; left:0px; top:0px; width:1052px; height:490px; background:url(../images/task_up.png) no-repeat;}
+.content_title{ position:absolute; top:50px; left:0px; height:35px; width:1050px; color:#0bb0f4; font-size:26px; font-weight:bold; text-align:center;}
+.content_title_program{ position:absolute; top:0px; left:10px; height:35px; width:300px; }
+.content_title_size{position:absolute; top:0px; left:740px; height:35px; width:150px; }
+.content_title_channel{position:absolute; top:0px; left:320px; height:35px; width:200px; }
+.content_title_status{position:absolute; top:0px; left:560px; height:35px; width:150px; }
+
+.content_list_area{ position:absolute; left:10px; top:83px; height:405px; width:1030px;  overflow:hidden; }
+#content_list{ position:absolute; top:5px;  width:1050px; height:405px; padding-left:0px; z-index:999;}
+.content_program{line-height:50px; height:53px; margin-top:-2px; padding-left:0px;  text-align:center; width:300px; }
+.size_content{ position:absolute; left:730px; --padding-left:50px; width:150px; text-align:center;}
+.channel_content{ position:absolute; left:310px; text-align:center;  width:200px; }
+.list_state{ position:absolute; left:550px; text-align:center; width:150px; }
+.list_delete{ position:absolute; left:930px; width:92px; height:40px; background:url(../images/task_dele_focus1.png) no-repeat; margin-top:4px;}
+
+#small_focus{position:absolute; top:89px; left:940px; background:url(../images/task_dele_focus.png) no-repeat; height:38px; width:92px; z-index:9999; visibility:hidden;}
+
+.bottom{ position:absolute; left:113px; top:600px; width:1052px; height:58px; background:url(../images/task_down.png) no-repeat; font-size:18px; }
+.totole_title{position:absolute; top:20px; left:60px; width:110px; height:30px;}
+#totole_content{position:absolute; top:20px; left:175px; width:100px; height:30px;}
+.left_title{position:absolute; top:20px; left:280px; width:130px; height:30px;}
+#left_content{position:absolute; top:20px; left:425px; width:100px; height:30px;}
+.used_title{position:absolute; top:20px; left:530px; width:130px; height:30px;}
+#used_content{position:absolute; top:20px; left:665px; width:100px; height:30px;}
+.date_title{position:absolute; top:20px; left:770px; width:110px; height:30px;}
+#date_content{position:absolute; top:20px; left:885px; width:200px; height:30px;}
+
+#tip{ position:absolute; left:400px; top:250px; width:522px; height:283px; background:url(../images/dele_tip_bg.png) no-repeat; visibility:hidden; z-index:9999;}
+.tip_title{ position:absolute; left:40px; top:15px; width:434px; height:30px; text-align:center; /*color:#FFF;*/}
+.tip_content{ position:absolute; left:50px; top:90px; width:434px; height:30px; text-align:center;color:#000;  }
+#tip_affirm{ position:absolute; left:165px; top:165px; width:117px; height:36px; color:#000;}
+#tip_cancel{position:absolute; left:315px; top:165px; width:117px; height:36px; color:#000;}
+#tip_affirm_bg{ position:absolute; left:130px; top:160px; width:117px; height:36px; background:url(../images/dele_tip_focus.png) no-repeat; }
+#tip_cancel_bg{ position:absolute; left:280px; top:160px; width:117px; height:36px; background:url(../images/dele_tip_focus1.png) no-repeat; }
+
+#tipTip{ position:absolute; left:400px; top:250px; width:522px; height:283px; background:url(../images/dele_tip_bg.png) no-repeat; visibility:hidden; z-index:9999;}
+#tipTip_content{ position:absolute; left:50px; top:120px; width:434px; height:30px; text-align:center; font-size:26px;color:#000;}
+
+.down_area{ position:absolute; left:150px; top:555px; height:40px; width:1000px; font-size:18px;}
+#total{position: absolute; left: 726px; top: 5px; height: 30px; width: 150px;}
+#page{ position:absolute; left:890px; top:5px; height:30px; width:150px;}

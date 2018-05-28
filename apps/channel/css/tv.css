@@ -1,0 +1,131 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	padding:0;margin:0;font-family:"Microsoft YaHei" !important;
+}
+body {
+	margin:0;padding:0;color:#FFF;background:#000;border:0px; width:1280px; height:720px; border:0px;
+}
+img {
+	border:0;
+}
+
+#up_arrow{
+		position:absolute; left:160px; top:13px; width:120px; height:50px; background:url(../images/up.png) no-repeat;;z-index:5;
+}
+#down_arrow{
+		position:absolute; left:160px; top:667px; width:120px; height:50px; background:url(../images/down.png) no-repeat;;z-index:5;
+}
+#ch_bg{
+	position:absolute; left:60px; top:63px; width:144px; height:594px; background:url(../images/ch_list_bg.png) no-repeat;;z-index:5;
+}
+#ch_menu{
+	height:482px;width:124px;z-index:1;position:absolute;text-align: center;font-size:24px;margin-top:19px;
+}
+#ch_menu ul{
+	height:482px;width:124px;vertical-align:middle;list-style-type:none; 
+}
+#ch_menu ul li{
+    height: 40px;
+    line-height: 45px;
+    list-style-type: none;
+    margin-bottom:8px;
+	padding-top:5px;
+    text-align: center;
+    width: 144px;
+}
+#ch_menu ul li.o{
+	/*background: url("../images/list_on.png") repeat-x center center;*/background-color:#777;height: 45px;width: 144px;color:#fff;font-size: 24px;
+	
+}
+
+#ch_menu ul li.curfocus{
+	/*background:url("../images/list_cur.png") repeat-x center center;*/background-color:#66c9f0;color:#141414;height: 45px;width: 144px;font-size: 24px;
+}
+
+
+
+
+
+
+#ch_detail{
+	background: url("../images/ch_list_bg_r.png") repeat scroll 0 0;
+    height: auto;
+    left: 212px;
+    position: absolute;
+    text-align: center;
+    top: 63px;
+    width: 305px;
+    z-index: 5;
+}
+#ch_lists{
+		opacity:0.8;top:0px;left:0px;;height:576px;width:305x;z-index:1;position:relative;text-align: center; overflow:hidden; padding-top:21px;
+}
+#ch_lists ul{
+	height:auto;width:305px;list-style-type:none; 
+}
+#ch_lists ul li{
+    float: left;
+    font-size: 26px;
+    height:33px;
+    line-height: 33px;
+	padding-top:8px;
+    list-style-type: none;
+    margin-bottom:15px;
+    margin-left: 12px;
+    padding-left: 10px;
+    text-align: left;
+    width:243px;
+}
+#ch_lists ul li .channel_name{
+	padding-left: 12px;
+	color:#f0f0f0;
+}
+#ch_lists ul li .channel_id{
+	padding-left: 12px;
+	color:#f0f0f0;
+}
+#ch_lists  ul li.curfocus{
+	/*background: url("../images/ch_focus_on.png") repeat-x center center;background-color:#777;*/border:4px solid #2AEDFF;color: #2AEDFF;
+}
+#ch_lists  ul li.o{
+	/*background: url("../images/ch_focus_on.png") repeat-x center center;background-color:#aaa;*/color: #2AEDFF;
+}
+
+
+/*style for play info panel*/
+#content{background: url(../images/channel_play.png) no-repeat;width: 1046px;height: 169px;position: absolute;top: 490px;left: 118px;z-index: 3;}
+#content #channel_lists .channel_id{display: inline-block;height: 44px;padding-left: 26px;text-align: left;width: 54px;z-index: 999;letter-spacing: 0px;}
+#content #channel_focus .channel_name{padding-left: 6px;}
+#channel_focus{font-family: 黑体;font-size: 28px;height: 40px;padding-left: 25px;padding-top: 19px;width: 650px;font-weight: bold;}
+#content #channel_lists{font-family: 黑体;font-size: 23px;height: 100px;opacity: 1;padding-top: 13px;text-align: left;width: 650px;padding-left: 23px;}
+#content #channel_lists ul{height: auto;width: 508px;vertical-align: middle;list-style-type: none;}
+#content #channel_lists ul li{height: 39px;line-height: 39px;list-style-type: none;}
+#content #channel_lists ul li .time_up,#content #channel_lists ul li .list_name1{color: #e1fd22;}
+#content #channel_lists ul li .time_down,#content #channel_lists ul li .list_name2{/*color: #54d0ff;*/color:#fff}
+#content #date{position: absolute;top: 22px;left: 794px;width: 225px;}
+#content #date ul li{height: 58px;line-height: 58px;list-style-type: none;}
+#content #date .time{font-size: 46px;font-weight: bold;font-family: 黑体;display: block;text-align: center;}
+#content #date .week{font-size: 28px;font-weight: bold;font-family: 黑体;}
+#content #date .date{font-size: 28px;font-family:Arial,"黑体";}
+
+
+
+/*added by yao*/
+#ch_lists div{height:40px;display:block;padding-top:10px;padding-bottom:5px}
+.div_hidden{display:'none';position:absolute;top:20px;}
+#div_msg{position:absolute;left:224px;width:253px;top:83px;height:41px;z-index:101;border:solid 4px #2AEDFF}
+
+/*---------volume---*/
+#Volume_Div{
+ background:url(../images/volume.png) no-repeat 0px 0px;height: 83px;left: 397px; position: absolute;top: 550px;width: 550px;z-index:999;opacity:0.6;z-index:10;
+}
+#volume_mute{
+	 background:url(../images/volume.png) no-repeat -72px -158px;height: 25px;left: 25px;position: absolute;top: 25px;width: 27px;
+}
+#volume {
+    background:url(../images/volume.png) no-repeat -59px -114px; height: 12px;left:60px;position: absolute;top: 33px;width:550px;
+}
+#volume_value {
+    color: #00E1FC;font-size: 28px;left: 480px;position: absolute;top: 24px;
+}
